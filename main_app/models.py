@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.contrib.auth.models import User, AbstractUser, Group, Permission
 
 # Create your models here.
 
@@ -18,7 +18,8 @@ class UserProfile(AbstractUser):
     user_permissions = models.ManyToManyField(Permission, related_name='user_profiles')
 
 class Client(models.Model):
-    user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
     company_name = models.CharField(max_length=100)
     public_contact_info = models.CharField(max_length=255)
 
@@ -32,9 +33,8 @@ class Freelancer(models.Model):
         ('back_end_developer', 'Back-End Developer'),
         ('full_stack_developer', 'Full Stack Developer'),
     ]
-
-
-    user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
     skills = models.CharField(max_length=255)
     base_rate = models.DecimalField(max_digits=8, decimal_places=2)
     type_fl = models.CharField(max_length=20, choices=FREELANCER_TYPES)
@@ -49,3 +49,25 @@ class JobPosting(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     
+
+
+class ClientProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    address = models.CharField(max_length=255)
+    company = models.CharField(max_length=20)
+    phone_number = models.CharField(max_length=20)
+    # Add more fields as needed for client profiles
+
+    def __str__(self):
+        return self.user.username
+    
+
+class FreelancerProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    skills = models.TextField()
+    portfolio_link = models.URLField()
+    hourly_rate = models.DecimalField(max_digits=8, decimal_places=2)
+    # Add more fields as needed for freelancer profiles
+
+    def __str__(self):
+        return self.user.username

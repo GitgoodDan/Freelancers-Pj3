@@ -1,19 +1,19 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('categories/', views.categories, name='categories'),
     # path('categories/<>', views.listings, name='listings'),
-    path('register/', views.register, name='register'),
-    path('register/client/', views.reg_client, name='reg_client'),
-    path('register/freelancer/', views.reg_freelancer, name='reg_freelancer'),
+
+    # path('register/', views.register, name='register'),
+    # path('register/client/', views.reg_client, name='reg_client'),
+    # path('register/freelancer/', views.reg_freelancer, name='reg_freelancer'),
+
     # path('profile/client/<int:client_id>', views.profile_client, name='prof_client'),
     # path('profile/freelancer/<int:freelancer_id>', views.profile_freelancer, name='prof_freelancer'),
-    path('posting/create/', views.JobCreate.as_view(), name='posting_create'),
-    path('posting/update/', views.JobUpdate.as_view(), name='posting_update'),
-    path('posting/new/', views.JobDelete.as_view(), name='posting_delete'),
-    path('posting/list/', views.JobList.as_view(), name='posting_list'),
-    path('posting/details', views.JobDetail.as_view(), name='posting_detail'),
+=========
+>>>>>>>>> Temporary merge branch 2
 ]

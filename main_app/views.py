@@ -2,9 +2,8 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
-from .models import Client, Freelancer, JobPosting
-
 # Create your views here.
+<<<<<<<<< Temporary merge branch 1
 def home(request):
   return render(request, 'home.html')
 
@@ -18,7 +17,7 @@ def listings(request):
   return render(request, 'categories/listings.html')
 
 def register(request):
-  return render(request, 'register/index.html')
+  return render(request, 'registration/register.html')
 
 def reg_client(request):
   return render(request, 'register/client.html')
@@ -54,5 +53,10 @@ class JobDelete(DeleteView):
 class JobList(ListView):
   model = JobPosting
 
-class JobDetail(DetailView):
-  model = JobPosting
+# class JobDetail(DetailView):
+#   model = JobPosting
+=========
+
+def home(request):
+  return render(request, 'home.html')
+>>>>>>>>> Temporary merge branch 2
