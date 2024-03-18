@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+
+from .models import Client, Freelancer, JobPosting
 
 # Create your views here.
 def home(request):
@@ -24,27 +26,33 @@ def reg_client(request):
 def reg_freelancer(request):
   return render(request, 'register/freelancer.html')
 
-def profile_client(request):
-  # client = Client.objects.get(id=client_id)
-  return render(request, 'profile/client.html', {})
+def profile_client(request, client_id):
+  client = Client.objects.get(id=client_id)
+  return render(request, 'profile/client.html', {'client': client})
 
-def profile_freelancer(request):
-  # freelancer = Freelancer.objects.get(id=freelancer_id)
-  return render(request, 'profile/freelancer.html', {})
+def profile_freelancer(request, freelancer_id):
+  freelancer = Freelancer.objects.get(id=freelancer_id)
+  return render(request, 'profile/freelancer.html', {'freelancer': freelancer})
 
-# class JobCreate(CreateView):
-#   model = JobPosting
-#   fields = '__all__'
+def job_detail(request, job_id):
+  job = JobPosting.objects.get(id=job_id)
+  return render(request, 'jobposting/detail.html', {'job': job})
 
-# class JobUpdate(UpdateView):
-#   model = JobPosting
-#   fields = []
+class JobCreate(CreateView):
+  model = JobPosting
+  fields = ['title', 'description', 'price']
+  success_url = '/posting/list'
 
-# class JobDelete(DeleteView):
-#   model = JobPosting
+class JobUpdate(UpdateView):
+  model = JobPosting
+  fields = ['title', 'description', 'price']
 
-# class JobList(ListView):
-#   model = JobPosting
+class JobDelete(DeleteView):
+  model = JobPosting
+  success_url = '/'
 
-# class JobDetail(DetailView):
-#   model = JobPosting
+class JobList(ListView):
+  model = JobPosting
+
+class JobDetail(DetailView):
+  model = JobPosting

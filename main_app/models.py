@@ -43,8 +43,8 @@ class Freelancer(models.Model):
         return self.user.username
 
 class JobPosting(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='job_postings')
-    freelancer = models.ForeignKey(Freelancer, on_delete=models.SET_NULL, blank=True, null=True, related_name='job_applications')
+    # client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='job_postings')
+    # freelancer = models.ForeignKey(Freelancer, on_delete=models.SET_NULL, blank=True, null=True, related_name='job_applications')
     title = models.CharField(max_length=100)
     description = models.TextField()
     price = models.IntegerField()
