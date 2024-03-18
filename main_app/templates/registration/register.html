@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h2>Register</h2>
+    <p>Are you a client or a freelancer?</p>
+
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+                 <a href="{% url 'client_signup' %}" class="btn btn-primary">I'm a Client</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+                  <a href="{% url 'freelancer_signup' %}" class="btn btn-primary">I'm a Freelancer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+{% endblock %}

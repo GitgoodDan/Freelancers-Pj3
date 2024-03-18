@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+
+from .forms import ClientSignUpForm, FreelancerSignUpForm
+from .models import ClientProfile, FreelancerProfile
+
 
 # Create your views here.
 
@@ -17,7 +23,7 @@ def listings(request):
   return render(request, 'categories/listings.html')
 
 def register(request):
-  return render(request, 'register/index.html')
+  return render(request, 'registration/register.html')
 
 def reg_client(request):
   return render(request, 'register/client.html')
@@ -49,3 +55,31 @@ def profile_freelancer(request):
 
 # class JobDetail(DetailView):
 #   model = JobPosting
+
+# Auth
+def signup(request):
+    return render(request, 'registration/register.html')
+
+def client_signup(request):
+    if request.method == 'POST':
+        form = ClientSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = ClientSignUpForm()
+    
+    return render(request, 'registration/client_signup.html', {'form': form})
+
+def freelancer_signup(request):
+    if request.method == 'POST':
+        form = FreelancerSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = FreelancerSignUpForm()
+    
+    return render(request, 'registration/freelancer_signup.html', {'form': form})

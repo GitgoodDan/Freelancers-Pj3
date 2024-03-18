@@ -1,0 +1,34 @@
+<!-- signup.html -->
+
+
+<!--Can Delete -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h2>Sign Up</h2>
+
+    <h3>Client Sign Up</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ client_form.as_p }}
+        <button type="submit" name="client_signup">Sign Up as Client</button>
+    </form>
+
+    <h3>Freelancer Sign Up</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ freelancer_form.as_p }}
+        <button type="submit" name="freelancer_signup">Sign Up as Freelancer</button>
+    </form>
+
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
