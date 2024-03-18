@@ -4,6 +4,9 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+from .forms import ClientSignUpForm, FreelancerSignUpForm
+from .models import ClientProfile, FreelancerProfile
+
 
 # Create your views here.
 
@@ -20,7 +23,7 @@ def listings(request):
   return render(request, 'categories/listings.html')
 
 def register(request):
-  return render(request, 'register/index.html')
+  return render(request, 'registration/register.html')
 
 def reg_client(request):
   return render(request, 'register/client.html')
@@ -55,21 +58,28 @@ def profile_freelancer(request):
 
 # Auth
 def signup(request):
-  error_message = ''
-  if request.method == 'POST':
-    # This is how to create a 'user' form object
-    # that includes the data from the browser
-    form = UserCreationForm(request.POST)
-    if form.is_valid():
-      # This will add the user to the database
-      user = form.save()
-      # This is how we log a user in via code
-      login(request, user)
-      return redirect('home')
-    else:
-      error_message = 'Invalid sign up - try again'
-  # A bad POST or a GET request, so render signup.html with an empty form
-  form = UserCreationForm()
-  context = {'form': form, 'error_message': error_message}
-  return render(request, 'registration/signup.html', context)
+    return render(request, 'registration/register.html')
 
+def client_signup(request):
+    if request.method == 'POST':
+        form = ClientSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = ClientSignUpForm()
+    
+    return render(request, 'registration/client_signup.html', {'form': form})
+
+def freelancer_signup(request):
+    if request.method == 'POST':
+        form = FreelancerSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = FreelancerSignUpForm()
+    
+    return render(request, 'registration/freelancer_signup.html', {'form': form})

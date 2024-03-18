@@ -33,8 +33,6 @@ class Freelancer(models.Model):
         ('back_end_developer', 'Back-End Developer'),
         ('full_stack_developer', 'Full Stack Developer'),
     ]
-
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     # user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
     skills = models.CharField(max_length=255)
@@ -51,3 +49,25 @@ class JobPosting(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     
+
+
+class ClientProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    address = models.CharField(max_length=255)
+    company = models.CharField(max_length=20)
+    phone_number = models.CharField(max_length=20)
+    # Add more fields as needed for client profiles
+
+    def __str__(self):
+        return self.user.username
+    
+
+class FreelancerProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    skills = models.TextField()
+    portfolio_link = models.URLField()
+    hourly_rate = models.DecimalField(max_digits=8, decimal_places=2)
+    # Add more fields as needed for freelancer profiles
+
+    def __str__(self):
+        return self.user.username
