@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Digital Marketing Jobs</h1>
+
+{% for jobposting in jobposting_list %}
+{% if jobposting.category == 'Digital Marketing' %}
+
+       <a href="{% url 'posting_detail' jobposting.id %}">
+        <div>
+           <h5> {{ jobposting.title }}</h5>
+        </div>
+      </a>
+
+{% endif %}
+{% endfor %}
+
+{% endblock %}
