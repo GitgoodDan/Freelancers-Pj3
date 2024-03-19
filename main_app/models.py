@@ -2,7 +2,6 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User, AbstractUser, Group, Permission
 
-# Create your models here.
 
 class UserProfile(AbstractUser):
     CLIENT_ROLE = 'client'
@@ -17,7 +16,6 @@ class UserProfile(AbstractUser):
     
     groups = models.ManyToManyField(Group, related_name='user_profiles')
     user_permissions = models.ManyToManyField(Permission, related_name='user_profiles')
-
 
 
 class ClientProfile(models.Model):
@@ -49,6 +47,8 @@ class FreelancerProfile(models.Model):
     def get_absolute_url(self):
         return reverse('prof_freelancer', kwargs={'freelancer_id': self.id})
     # Add more fields as needed for freelancer profiles
+    type_fl = models.CharField(max_length=20, choices=FREELANCER_TYPES)
+
 
     def __str__(self):
         return self.user.username
