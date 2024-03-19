@@ -23,6 +23,7 @@ def categories(request):
 
 def graphic_design_index(request):
    jobpostings_GD = JobPosting.objects.filter(category = 'graphic_design').values()
+   print(jobpostings_GD)
    return render(request, 'categories/graphic_design.html', {'jobpostings_GD': jobpostings_GD})
 
 def web_dev_index(request):
