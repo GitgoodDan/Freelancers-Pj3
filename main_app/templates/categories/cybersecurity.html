@@ -3,8 +3,7 @@
 
 <h1>Cybersecurity Jobs</h1>
 
-{% for jobposting in jobposting_list %}
-{% if jobposting.category == 'Cybersecurity' %}
+{% for jobposting in jobpostings_CS %}
 
        <a href="{% url 'posting_detail' jobposting.id %}">
         <div>
@@ -12,7 +11,7 @@
         </div>
       </a>
 
-{% endif %}
+
 {% endfor %}
 
 {% endblock %}

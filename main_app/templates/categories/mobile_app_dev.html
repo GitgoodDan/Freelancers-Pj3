@@ -3,8 +3,7 @@
 
 <h1>Mobile App Development Jobs</h1>
 
-{% for jobposting in jobposting_list %}
-{% if jobposting.category == 'Mobile App Development' %}
+{% for jobposting in jobpostings_MAD %}
 
        <a href="{% url 'posting_detail' jobposting.id %}">
         <div>
@@ -12,7 +11,7 @@
         </div>
       </a>
 
-{% endif %}
+
 {% endfor %}
 
 {% endblock %}

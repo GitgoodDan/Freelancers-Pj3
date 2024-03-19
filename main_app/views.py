@@ -26,16 +26,20 @@ def graphic_design_index(request):
    return render(request, 'categories/graphic_design.html', {'jobpostings_GD': jobpostings_GD})
 
 def web_dev_index(request):
-   return render(request, 'categories/web_dev.html')
+   jobpostings_WD = JobPosting.objects.filter(category = 'web_development').values()
+   return render(request, 'categories/web_dev.html', {'jobpostings_WD': jobpostings_WD})
 
 def digital_marketing_index(request):
-   return render(request, 'categories/digital_marketing.html')
+   jobpostings_DM = JobPosting.objects.filter(category = 'digital_marketing').values()
+   return render(request, 'categories/digital_marketing.html', {'jobpostings_DM': jobpostings_DM})
 
 def mobile_app_dev_index(request):
-   return render(request, 'categories/mobile_app_dev.html')
+   jobpostings_MAD = JobPosting.objects.filter(category = 'digital_marketing').values()
+   return render(request, 'categories/mobile_app_dev.html', {'jobpostings_MAD': jobpostings_MAD})
 
 def cybersecurity_index(request):
-   return render(request, 'categories/cybersecurity.html')
+   jobpostings_CS = JobPosting.objects.filter(category = 'digital_marketing').values()
+   return render(request, 'categories/cybersecurity.html', {'jobpostings_CS': jobpostings_CS})
 
 def listings(request):
   return render(request, 'categories/listings.html')
@@ -79,9 +83,9 @@ class FreelancerDelete(DeleteView):
    success_url = '/register'
 
 
-def job_detail(request, jobposting_id):
-  jobposting = JobPosting.objects.get(id=jobposting_id)
-  return render(request, 'jobposting/detail.html', {'jobposting': jobposting})
+def job_detail(request, job_id):
+  job = JobPosting.objects.get(id=job_id)
+  return render(request, 'jobposting/detail.html', {'job': job})
 
 class JobCreate(LoginRequiredMixin, CreateView):
   model = JobPosting
