@@ -54,7 +54,7 @@ class FreelancerProfile(models.Model):
 
 
 class JobPosting(models.Model):
-    client = models.ForeignKey(ClientProfile, on_delete=models.CASCADE, related_name='job_postings')
+    client = models.ForeignKey(User, on_delete=models.CASCADE, related_name='job_postings')
     freelancer = models.ForeignKey(FreelancerProfile, on_delete=models.SET_NULL, blank=True, null=True, related_name='job_applications')
     title = models.CharField(max_length=100)
     description = models.TextField()

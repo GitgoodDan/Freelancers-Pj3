@@ -53,9 +53,11 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'categories' %}">Cybersecurity  </a>
         </li>
+        {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'posting_create' %}">Post New Job</a>
         </li>
+        {% endif %}
       </ul>
     </div>
   </nav>

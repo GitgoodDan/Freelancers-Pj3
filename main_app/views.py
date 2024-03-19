@@ -2,12 +2,16 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+# from django.urls import reverse_lazy
+
 from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationForm
 
 from .forms import ClientSignUpForm, FreelancerSignUpForm
 
-from .models import JobPosting, ClientProfile, FreelancerProfile
+from .models import JobPosting, ClientProfile, FreelancerProfile, UserProfile, User
 
 # Create your views here.
 def home(request):
@@ -65,16 +69,19 @@ def job_detail(request, jobposting_id):
   jobposting = JobPosting.objects.get(id=jobposting_id)
   return render(request, 'jobposting/detail.html', {'jobposting': jobposting})
 
-class JobCreate(CreateView):
+class JobCreate(LoginRequiredMixin, CreateView):
   model = JobPosting
   fields = ['title', 'description', 'price', 'category', 'location']
-  success_url = '/posting/list'
-
-class JobUpdate(UpdateView):
+  def form_valid(self, form):
+     form.instance = self.request.user
+     return super().form_valid(form)
+  success_url = '/'
+  
+class JobUpdate(LoginRequiredMixin, UpdateView):
   model = JobPosting
   fields = ['title', 'description', 'price', 'category', 'location']
 
-class JobDelete(DeleteView):
+class JobDelete(LoginRequiredMixin, DeleteView):
   model = JobPosting
   success_url = '/'
 
