@@ -35,6 +35,14 @@ def profile_client(request, client_id):
   client = ClientProfile.objects.get(id=client_id)
   return render(request, 'profile/client.html', {'client': client})
 
+class ClientUpdate(UpdateView):
+   model = ClientProfile
+   fields = ['address', 'company', 'phone_number']
+
+class ClientDelete(DeleteView):
+   model = ClientProfile
+   success_url = '/register'
+
 def profile_freelancer(request, freelancer_id):
   freelancer = FreelancerProfile.objects.get(id=freelancer_id)
   return render(request, 'profile/freelancer.html', {'freelancer' : freelancer})

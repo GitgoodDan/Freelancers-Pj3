@@ -25,6 +25,8 @@ class ClientProfile(models.Model):
     address = models.CharField(max_length=255)
     company = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=20)
+    def get_absolute_url(self):
+        return reverse('prof_client', kwargs={'client_id': self.id})
     # Add more fields as needed for client profiles
 
     def __str__(self):

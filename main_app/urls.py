@@ -17,7 +17,9 @@ urlpatterns = [
     path('client_signup/', views.client_signup, name='client_signup'),
     path('freelancer_signup/', views.freelancer_signup, name='freelancer_signup'),
     path('profile/client/<int:client_id>', views.profile_client, name='prof_client'),
+    path('profile/client/<int:pk>/update', views.ClientUpdate.as_view(), name='client_update'),
+    path('profile/client/<int:pk>/delete', views.ClientDelete.as_view(), name='client_delete'),
     path('profile/freelancer/<int:freelancer_id>', views.profile_freelancer, name='prof_freelancer'),
     path('profile/freelancer/<int:pk>/update', views.FreelancerUpdate.as_view(), name='freelancer_update'),
-    path('profile/freelancer/<int:pk>/update', views.FreelancerDelete.as_view(), name='freelancer_delete'),
+    path('profile/freelancer/<int:pk>/delete', views.FreelancerDelete.as_view(), name='freelancer_delete'),
 ]

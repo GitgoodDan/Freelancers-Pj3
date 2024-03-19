@@ -6,6 +6,10 @@
 <p>Address: {{ client.address }}</p>
 <p>Phone: {{ client.phone_number }}</p>
 <p>Email: {{ client.user.email }}</p>
+<div class="card-action">
+    <a href="{% url 'client_update' client.id %}">Edit</a>
+    <a href="{% url 'client_delete' client.id %}">Delete</a>
+  </div>
 
 
 {% endblock %}
