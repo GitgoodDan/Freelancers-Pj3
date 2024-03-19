@@ -1,13 +1,61 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <p>categories/index</p>
-    <ul>
-   <li> <a href="">Graphic Design</a> </li>
-   <li> <a href="">Web Development</a> </li>
-   <li> <a href="">Digital Marketing</a> </li>
-   <li> <a href="">Mobile App Development</a> </li>
-   <li> <a href="">Cyber Security</a> </li>
-    </ul>
+<h1>categories</h1> <!--<span class="teal-text">{{object.name}}</span>-->
+    
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+    <a href="">
+        <div class="card bg-dark text-white">
+            <img src="https://picsum.photos/10/10" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h2 class="card-title">Graphic Design</h2>
+            </div>
+          </div>
+    </a>
+    </div><!--//col-->
+    <div class="col">
+        <a href="">
+            <div class="card bg-dark text-white">
+                <img src="https://picsum.photos/10/10" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <h2 class="card-title">Web Development</h2>
+                </div>
+              </div>
+        </a>
+    </div><!--//col-->
+    <div class="col">
+        <a href="">
+            <div class="card bg-dark text-white">
+                <img src="https://picsum.photos/10/10" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <h2 class="card-title">Digital Marketing</h2>
+                </div>
+              </div>
+        </a>
+    </div><!--//col-->
+    <div class="col ">
+        <a href="">
+            <div class="card bg-dark text-white ">
+                <img src="https://picsum.photos/10/10" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <h2 class="card-title">Mobile App Development</h2>
+                </div>
+              </div>
+        </a>
+    </div><!--//col-->
+    <div class="col">
+        <a href="">
+            <div class="card bg-dark text-white">
+                <img src="https://picsum.photos/10/10" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <h2 class="card-title">Cybersecurity</h2>
+                </div>
+              </div>
+        </a>
+    </div><!--//col-->
+  </div>
+
 
 {% endblock %}

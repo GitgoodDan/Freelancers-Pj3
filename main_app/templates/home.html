@@ -2,14 +2,84 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>home</h1>
-<ul class="right">
-    {% if user.is_authenticated %}
-    <li><a href="{% url 'logout' %}">Log Out</a></li>
-    {% else %}
-    <li><a href="{% url 'login' %}">Log In</a></li>
-    <li><a href="{% url 'register' %}">Sign Up</a></li>
-    {% endif %}
+<!-- Hero Section -->
+<div class="hero">
+  <div class="container">
+    <h1 class="display-4">Find Your Expert</h1>
+    <p class="lead">Hire top talent for your projects</p>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</div>
 
-  </ul>
+<!-- Popular Services Section -->
+<section class="popular-services">
+  <div class="container">
+    <h2 class="section-title">Popular Services</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://picsum.photos/10/10" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Service 1</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://picsum.photos/10/10" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Service 2</h5>
+            <p class="card-text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://picsum.photos/10/10" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Service 3</h5>
+            <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Freelancer Section -->
+<section class="why-freelancer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="section-title">Why Freelancer?</h2>
+        <ul class="reasons-list">
+          <li>Pay per project.</li>
+          <li>Post a job and hire top talent.</li>
+          <li>Work with the best.</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <img src="https://via.placeholder.com/400" class="img-fluid" alt="Join Freelancer">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Join Section -->
+<section class="join-section">
+    <h2 class="section-title ">Join Freelancer Today</h2>
+    <div class="btn-group" role="group" aria-label="Join buttons">
+      <button type="button" class="btn btn-success">For Clients</button>
+      <button type="button" class="btn ">For Talent</button>
+  </div>
+</section>
+
+
 {% endblock %}
