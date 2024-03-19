@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <p>profile/client</p>
+<h1>{{ client.user.username }}'s Profile</h1>
+<p>Company: {{  client.company }} </p>
+<p>Address: {{ client.address }}</p>
+<p>Phone: {{ client.phone_number }}</p>
+<p>Email: {{ client.user.email }}</p>
+
 
 {% endblock %}

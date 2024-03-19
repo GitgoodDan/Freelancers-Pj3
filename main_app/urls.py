@@ -12,10 +12,12 @@ urlpatterns = [
     # path('register/client/', views.reg_client, name='reg_client'),
     # path('register/freelancer/', views.reg_freelancer, name='reg_freelancer'),
 
-    # path('profile/client/<int:client_id>', views.profile_client, name='prof_client'),
-    # path('profile/freelancer/<int:freelancer_id>', views.profile_freelancer, name='prof_freelancer'),
     path('accounts/signup/', views.signup, name='signup'),
     path('register/', views.register, name='register'),
     path('client_signup/', views.client_signup, name='client_signup'),
     path('freelancer_signup/', views.freelancer_signup, name='freelancer_signup'),
+    path('profile/client/<int:client_id>', views.profile_client, name='prof_client'),
+    path('profile/freelancer/<int:freelancer_id>', views.profile_freelancer, name='prof_freelancer'),
+    path('profile/freelancer/<int:pk>/update', views.FreelancerUpdate.as_view(), name='freelancer_update'),
+    path('profile/freelancer/<int:pk>/update', views.FreelancerDelete.as_view(), name='freelancer_delete'),
 ]
