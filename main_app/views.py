@@ -22,21 +22,8 @@ def categories(request):
   return render(request, 'categories/index.html')
 
 def graphic_design_index(request):
-  #  graphic_design = JobPosting.category('graphic_design')
-  #  graphic_design = JobPosting.__getattribute__(category = 'graphic_design')
-  #  graphic_design = JobPosting.__getattribute__(category='category')
-  #  graphic_design = JobPosting.__dir__(category = 'Graphic Design')
-  #  graphic_design = JobPosting.objects.filter(category = 'Graphic Design')
-  #  getattr(JobPosting, category['Graphic Design'])
-  #  return render(request, 'categories/graphic_design.html', {'graphic_design': graphic_design})
-  #  jobs = JobPosting.objects.filter(category='category')
-  #  category = JobPosting.objects.get()
-  #  getattr(category, 'Graphic Design')
-   jobpotings = JobPosting.objects.all()
-  #  return render(request, 'categories/graphic_design.html')
-   return render(request, 'categories/graphic_design.html', {'jobpotings': jobpotings})
-  #  return render(request, 'categories/graphic_design.html', {'category': category})
-  #  return render(request, 'categories/graphic_design.html', {'graphic_design': graphic_design})
+   jobpostings_GD = JobPosting.objects.filter(category = 'graphic_design').values()
+   return render(request, 'categories/graphic_design.html', {'jobpostings_GD': jobpostings_GD})
 
 def web_dev_index(request):
    return render(request, 'categories/web_dev.html')
@@ -104,7 +91,6 @@ class JobCreate(LoginRequiredMixin, CreateView):
      job.client=self.request.user
      job.save()
      return redirect('/')
-  success_url = '/'
 
 class JobUpdate(LoginRequiredMixin, UpdateView):
   model = JobPosting
