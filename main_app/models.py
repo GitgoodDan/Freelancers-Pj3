@@ -59,4 +59,23 @@ class JobPosting(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     price = models.IntegerField()
+    JOB_CATEGORIES = [
+        ('graphic_design', 'Graphic Design'),
+        ('web_development', 'Web Development'),
+        ('digital_marketing', 'Digital Marketing'),
+        ('mobile_app_development', 'Mobile App Development'),
+        ('cyber_security', 'Cyber Security')
+    ]
+    category = models.CharField(
+        choices=JOB_CATEGORIES, 
+        max_length=24,
+        default=JOB_CATEGORIES[0][0])
+    JOB_LOCATIONS = [
+        ('united_states', 'United States'),
+        ('worldwide', 'Worldwide')
+    ]
+    location = models.CharField(
+        choices=JOB_LOCATIONS, 
+        max_length=16,
+        default=JOB_LOCATIONS[0][0])
 

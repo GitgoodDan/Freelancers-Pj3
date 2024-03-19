@@ -67,12 +67,12 @@ def job_detail(request, jobposting_id):
 
 class JobCreate(CreateView):
   model = JobPosting
-  fields = ['title', 'description', 'price']
+  fields = ['title', 'description', 'price', 'category', 'location']
   success_url = '/posting/list'
 
 class JobUpdate(UpdateView):
   model = JobPosting
-  fields = ['title', 'description', 'price']
+  fields = ['title', 'description', 'price', 'category', 'location']
 
 class JobDelete(DeleteView):
   model = JobPosting
