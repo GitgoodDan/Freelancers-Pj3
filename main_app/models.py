@@ -49,7 +49,6 @@ class FreelancerProfile(models.Model):
     # Add more fields as needed for freelancer profiles
     type_fl = models.CharField(max_length=20, choices=FREELANCER_TYPES)
 
-
     def __str__(self):
         return self.user.username
 
@@ -60,3 +59,4 @@ class JobPosting(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     price = models.IntegerField()
+

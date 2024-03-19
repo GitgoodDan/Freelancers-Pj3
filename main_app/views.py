@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
 
 from .forms import ClientSignUpForm, FreelancerSignUpForm
-from .models import ClientProfile, FreelancerProfile
 
+from .models import JobPosting, ClientProfile, FreelancerProfile
 
 # Create your views here.
-
 def home(request):
   return render(request, 'home.html')
 
@@ -35,6 +35,11 @@ def profile_client(request, client_id):
   client = ClientProfile.objects.get(id=client_id)
   return render(request, 'profile/client.html', {'client': client})
 
+
+def profile_freelancer(request, freelancer_id):
+  freelancer = FreelancerProfile.objects.get(id=freelancer_id)
+  return render(request, 'profile/freelancer.html', {'freelancer': freelancer})
+
 class ClientUpdate(UpdateView):
    model = ClientProfile
    fields = ['address', 'company', 'phone_number']
@@ -55,24 +60,27 @@ class FreelancerDelete(DeleteView):
    model = FreelancerProfile
    success_url = '/register'
 
-# class JobCreate(CreateView):
-#   model = JobPosting
-#   fields = '__all__'
 
-# class JobUpdate(UpdateView):
-#   model = JobPosting
-#   fields = []
+def job_detail(request, jobposting_id):
+  jobposting = JobPosting.objects.get(id=jobposting_id)
+  return render(request, 'jobposting/detail.html', {'jobposting': jobposting})
 
-# class JobDelete(DeleteView):
-#   model = JobPosting
+class JobCreate(CreateView):
+  model = JobPosting
+  fields = ['title', 'description', 'price']
+  success_url = '/posting/list'
 
-# class JobList(ListView):
-#   model = JobPosting
+class JobUpdate(UpdateView):
+  model = JobPosting
+  fields = ['title', 'description', 'price']
 
-# class JobDetail(DetailView):
-#   model = JobPosting
+class JobDelete(DeleteView):
+  model = JobPosting
+  success_url = '/'
 
-# Auth
+class JobList(ListView):
+  model = JobPosting
+
 def signup(request):
     return render(request, 'registration/register.html')
 
