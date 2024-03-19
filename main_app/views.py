@@ -1,9 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
+from django.contrib.auth import login
+# from django.contrib.auth.forms import UserCreationForm
+
+from .forms import ClientSignUpForm, FreelancerSignUpForm
+
+from .models import JobPosting, ClientProfile, FreelancerProfile
+
 # Create your views here.
-<<<<<<<<< Temporary merge branch 1
 def home(request):
   return render(request, 'home.html')
 
@@ -26,16 +32,16 @@ def reg_freelancer(request):
   return render(request, 'register/freelancer.html')
 
 def profile_client(request, client_id):
-  client = Client.objects.get(id=client_id)
+  client = ClientProfile.objects.get(id=client_id)
   return render(request, 'profile/client.html', {'client': client})
 
 def profile_freelancer(request, freelancer_id):
-  freelancer = Freelancer.objects.get(id=freelancer_id)
+  freelancer = FreelancerProfile.objects.get(id=freelancer_id)
   return render(request, 'profile/freelancer.html', {'freelancer': freelancer})
 
-def job_detail(request, job_id):
-  job = JobPosting.objects.get(id=job_id)
-  return render(request, 'jobposting/detail.html', {'job': job})
+def job_detail(request, jobposting_id):
+  jobposting = JobPosting.objects.get(id=jobposting_id)
+  return render(request, 'jobposting/detail.html', {'jobposting': jobposting})
 
 class JobCreate(CreateView):
   model = JobPosting
@@ -53,10 +59,29 @@ class JobDelete(DeleteView):
 class JobList(ListView):
   model = JobPosting
 
-# class JobDetail(DetailView):
-#   model = JobPosting
-=========
+def signup(request):
+    return render(request, 'registration/register.html')
 
-def home(request):
-  return render(request, 'home.html')
->>>>>>>>> Temporary merge branch 2
+def client_signup(request):
+    if request.method == 'POST':
+        form = ClientSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = ClientSignUpForm()
+    
+    return render(request, 'registration/client_signup.html', {'form': form})
+
+def freelancer_signup(request):
+    if request.method == 'POST':
+        form = FreelancerSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = FreelancerSignUpForm()
+    
+    return render(request, 'registration/freelancer_signup.html', {'form': form})

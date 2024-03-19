@@ -4,13 +4,13 @@
 <h1>Job List</h1>
 
 {% for jobposting in jobposting_list %}
-  <a href="{% url 'posting_detail' jobposting.id %}">
-    
+
+       <a href="{% url 'posting_detail' jobposting.id %}">
         <div>
-            {{ jobposting.title }}
+           <h5> {{ jobposting.title }}</h5>
         </div>
-  
-  </a>
+      </a>
+
 {% endfor %}
 
 {% endblock %}
