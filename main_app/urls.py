@@ -8,6 +8,7 @@ urlpatterns = [
     path('categories/', views.categories, name='categories'),
     # path('categories/<>', views.listings, name='listings'),
 
+
     path('register/', views.register, name='register'),
     path('register/client/', views.reg_client, name='reg_client'),
     path('register/freelancer/', views.reg_freelancer, name='reg_freelancer'),
@@ -18,7 +19,11 @@ urlpatterns = [
     path('posting/delete/', views.JobDelete.as_view(), name='posting_delete'),
     path('posting/list/', views.JobList.as_view(), name='posting_list'),
     path('posting/<int:jobposting_id>/', views.job_detail, name='posting_detail'),
-    # path('profile/client/<int:client_id>', views.profile_client, name='prof_client'),
-    # path('profile/freelancer/<int:freelancer_id>', views.profile_freelancer, name='prof_freelancer'),
+    path('profile/client/<int:client_id>', views.profile_client, name='prof_client'),
+    path('profile/client/<int:pk>/update', views.ClientUpdate.as_view(), name='client_update'),
+    path('profile/client/<int:pk>/delete', views.ClientDelete.as_view(), name='client_delete'),
+    path('profile/freelancer/<int:freelancer_id>', views.profile_freelancer, name='prof_freelancer'),
+    path('profile/freelancer/<int:pk>/update', views.FreelancerUpdate.as_view(), name='freelancer_update'),
+    path('profile/freelancer/<int:pk>/delete', views.FreelancerDelete.as_view(), name='freelancer_delete'),
 
 ]

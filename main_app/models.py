@@ -1,7 +1,7 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User, AbstractUser, Group, Permission
 
-# Create your models here.
 
 class UserProfile(AbstractUser):
     CLIENT_ROLE = 'client'
@@ -23,6 +23,8 @@ class ClientProfile(models.Model):
     address = models.CharField(max_length=255)
     company = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=20)
+    def get_absolute_url(self):
+        return reverse('prof_client', kwargs={'client_id': self.id})
     # Add more fields as needed for client profiles
 
     def __str__(self):
@@ -40,6 +42,10 @@ class FreelancerProfile(models.Model):
     skills = models.TextField()
     portfolio_link = models.URLField()
     hourly_rate = models.DecimalField(max_digits=8, decimal_places=2)
+    type_fl = models.CharField(max_length=20, choices=FREELANCER_TYPES)
+    
+    def get_absolute_url(self):
+        return reverse('prof_freelancer', kwargs={'freelancer_id': self.id})
     # Add more fields as needed for freelancer profiles
     type_fl = models.CharField(max_length=20, choices=FREELANCER_TYPES)
 
@@ -48,9 +54,9 @@ class FreelancerProfile(models.Model):
 
 
 class JobPosting(models.Model):
-    client = models.ForeignKey(ClientProfile, on_delete=models.CASCADE, related_name='job_postings', null=True)
+    client = models.ForeignKey(ClientProfile, on_delete=models.CASCADE, related_name='job_postings')
     freelancer = models.ForeignKey(FreelancerProfile, on_delete=models.SET_NULL, blank=True, null=True, related_name='job_applications')
     title = models.CharField(max_length=100)
     description = models.TextField()
     price = models.IntegerField()
-    
+

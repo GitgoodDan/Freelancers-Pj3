@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <p>profile/freelancer</p>
+<h1>{{ freelancer.user.username }}'s Profile</h1>
+<p>Field: {{ freelancer.get_type_fl_display }}</p>
+<p>Base Rate: ${{  freelancer.hourly_rate }} </p>
+<p>Skills: {{ freelancer.skills }}</p>
+<p>Portfolio: <a href="{{ freelancer.portfolio_link }}">{{ freelancer.portfolio_link }}</a></p>
+<div class="card-action">
+    <a href="{% url 'freelancer_update' freelancer.id %}">Edit</a>
+    <a href="{% url 'freelancer_delete' freelancer.id %}">Delete</a>
+  </div>
 
-{% endblock %}
+{% endblock %}`
