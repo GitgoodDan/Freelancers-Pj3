@@ -31,13 +31,29 @@ def reg_client(request):
 def reg_freelancer(request):
   return render(request, 'register/freelancer.html')
 
-def profile_client(request):
-  # client = Client.objects.get(id=client_id)
-  return render(request, 'profile/client.html', {})
+def profile_client(request, client_id):
+  client = ClientProfile.objects.get(id=client_id)
+  return render(request, 'profile/client.html', {'client': client})
 
-def profile_freelancer(request):
-  # freelancer = Freelancer.objects.get(id=freelancer_id)
-  return render(request, 'profile/freelancer.html', {})
+class ClientUpdate(UpdateView):
+   model = ClientProfile
+   fields = ['address', 'company', 'phone_number']
+
+class ClientDelete(DeleteView):
+   model = ClientProfile
+   success_url = '/register'
+
+def profile_freelancer(request, freelancer_id):
+  freelancer = FreelancerProfile.objects.get(id=freelancer_id)
+  return render(request, 'profile/freelancer.html', {'freelancer' : freelancer})
+
+class FreelancerUpdate(UpdateView):
+   model = FreelancerProfile
+   fields = ['skills', 'portfolio_link', 'hourly_rate', 'type_fl']
+
+class FreelancerDelete(DeleteView):
+   model = FreelancerProfile
+   success_url = '/register'
 
 # class JobCreate(CreateView):
 #   model = JobPosting
