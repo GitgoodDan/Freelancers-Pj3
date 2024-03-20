@@ -3,6 +3,12 @@
 
 <h1>Graphic Design Jobs</h1>
 
+<h3>Job Search</h3>
+<form action="{% url 'job_search_gd' %}" method="GET">
+   <input type="text" name="q" placeholder="Search For Job">
+   <button type="submit">Search</button>
+</form>
+
 {% for jobposting in jobpostings_GD %}
 
        <a href="{% url 'posting_detail' jobposting.id %}">

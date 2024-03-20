@@ -1,21 +1,8 @@
 from django.db import models
 from django.urls import reverse
-from django.contrib.auth.models import User, AbstractUser, Group, Permission
+from django.contrib.auth.models import User
 
 
-class UserProfile(AbstractUser):
-    CLIENT_ROLE = 'client'
-    FREELANCER_ROLE = 'freelancer'
-    USER_ROLES = [
-        (CLIENT_ROLE, 'Client'),
-        (FREELANCER_ROLE, 'Freelancer'),
-    ]
-
-    role = models.CharField(max_length=15, choices=USER_ROLES)
-    location = models.CharField(max_length=100)
-    
-    groups = models.ManyToManyField(Group, related_name='user_profiles')
-    user_permissions = models.ManyToManyField(Permission, related_name='user_profiles')
 
 
 class ClientProfile(models.Model):

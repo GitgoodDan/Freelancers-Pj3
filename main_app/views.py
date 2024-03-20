@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationForm
 from .forms import ClientSignUpForm, FreelancerSignUpForm
-from .models import JobPosting, ClientProfile, FreelancerProfile, UserProfile, User
+from .models import JobPosting, ClientProfile, FreelancerProfile, User
 from django.db.models import Q
 from django.contrib import messages
 
@@ -36,11 +36,11 @@ def digital_marketing_index(request):
    return render(request, 'categories/digital_marketing.html', {'jobpostings_DM': jobpostings_DM})
 
 def mobile_app_dev_index(request):
-   jobpostings_MAD = JobPosting.objects.filter(category = 'digital_marketing').values()
+   jobpostings_MAD = JobPosting.objects.filter(category = 'mobile_app_development').values()
    return render(request, 'categories/mobile_app_dev.html', {'jobpostings_MAD': jobpostings_MAD})
 
 def cybersecurity_index(request):
-   jobpostings_CS = JobPosting.objects.filter(category = 'digital_marketing').values()
+   jobpostings_CS = JobPosting.objects.filter(category = 'cyber_security').values()
    return render(request, 'categories/cybersecurity.html', {'jobpostings_CS': jobpostings_CS})
 
 def listings(request):
@@ -108,6 +108,56 @@ class JobDelete(LoginRequiredMixin, DeleteView):
 
 class JobList(ListView):
   model = JobPosting
+  template_name = 'jobposting_list.html'
+  context_object_name = 'jobpostings'
+
+
+def job_search(request):
+  query = request.GET.get('q')
+  if query:
+    jobs = JobPosting.objects.filter(title__icontains=query)
+  else: jobs = JobPosting.objects.all()
+  return render(request, 'job_search.html', {'jobs': jobs})
+
+def job_search_wd(request):
+    query = request.GET.get('q')
+    if query:
+        jobs = JobPosting.objects.filter(category='web_development', title__icontains=query)
+    else:
+        jobs = JobPosting.objects.filter(category='web_development')
+    return render(request, 'job_search_wd.html', {'jobs': jobs, 'category': 'Web Development'})
+
+def job_search_gd(request):
+    query = request.GET.get('q')
+    if query:
+        jobs = JobPosting.objects.filter(category='graphic_design', title__icontains=query)
+    else:
+        jobs = JobPosting.objects.filter(category='graphic_design')
+    return render(request, 'job_search_wd.html', {'jobs': jobs, 'category': 'Graphic Design'})
+
+def job_search_dm(request):
+    query = request.GET.get('q')
+    if query:
+        jobs = JobPosting.objects.filter(category='digital_marketing', title__icontains=query)
+    else:
+        jobs = JobPosting.objects.filter(category='digital_marketing')
+    return render(request, 'job_search_wd.html', {'jobs': jobs, 'category': 'Digital Marketing'})
+
+def job_search_mad(request):
+    query = request.GET.get('q')
+    if query:
+        jobs = JobPosting.objects.filter(category='mobile_app_development', title__icontains=query)
+    else:
+        jobs = JobPosting.objects.filter(category='mobile_app_development')
+    return render(request, 'job_search_wd.html', {'jobs': jobs, 'category': 'Mobile App Development'})
+
+def job_search_cs(request):
+    query = request.GET.get('q')
+    if query:
+        jobs = JobPosting.objects.filter(category='cyber_security', title__icontains=query)
+    else:
+        jobs = JobPosting.objects.filter(category='cyber_security')
+    return render(request, 'job_search_wd.html', {'jobs': jobs, 'category': 'Cyber Security'})
 
 def signup(request):
     return render(request, 'registration/register.html')
