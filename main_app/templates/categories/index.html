@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h1>categories</h1> <!--<span class="teal-text">{{object.name}}</span>-->
+    
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+    <a href="{% url 'graphic_design' %}">
+        <div class="card bg-dark text-white">
+            <img src="https://picsum.photos/10/10" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h2 class="card-title">Graphic Design</h2>
+            </div>
+          </div>
 <div class="container-fluid">
   <div class="col">
     <a href="{% url 'subCategories' %}">

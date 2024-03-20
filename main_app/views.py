@@ -1,14 +1,13 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationForm
 from .forms import ClientSignUpForm, FreelancerSignUpForm
-from .models import JobPosting, ClientProfile, FreelancerProfile
+from .models import JobPosting, ClientProfile, FreelancerProfile, UserProfile, User
 from django.db.models import Q
 from django.contrib import messages
-
-
 
 # Create your views here.
 def home(request):
@@ -22,6 +21,30 @@ def categories(request):
 
 def subCategories(request):
   return render(request, 'categories/subCategories.html')
+
+def graphic_design_index(request):
+   jobpostings_GD = JobPosting.objects.filter(category = 'graphic_design').values()
+   print(jobpostings_GD)
+   return render(request, 'categories/graphic_design.html', {'jobpostings_GD': jobpostings_GD})
+
+def web_dev_index(request):
+   jobpostings_WD = JobPosting.objects.filter(category = 'web_development').values()
+   return render(request, 'categories/web_dev.html', {'jobpostings_WD': jobpostings_WD})
+
+def digital_marketing_index(request):
+   jobpostings_DM = JobPosting.objects.filter(category = 'digital_marketing').values()
+   return render(request, 'categories/digital_marketing.html', {'jobpostings_DM': jobpostings_DM})
+
+def mobile_app_dev_index(request):
+   jobpostings_MAD = JobPosting.objects.filter(category = 'digital_marketing').values()
+   return render(request, 'categories/mobile_app_dev.html', {'jobpostings_MAD': jobpostings_MAD})
+
+def cybersecurity_index(request):
+   jobpostings_CS = JobPosting.objects.filter(category = 'digital_marketing').values()
+   return render(request, 'categories/cybersecurity.html', {'jobpostings_CS': jobpostings_CS})
+
+def listings(request):
+  return render(request, 'categories/listings.html')
 
 def register(request):
   return render(request, 'registration/register.html')
@@ -61,20 +84,25 @@ class FreelancerDelete(DeleteView):
    model = FreelancerProfile
    success_url = '/register'
 
-def job_detail(request, jobposting_id):
-  jobposting = JobPosting.objects.get(id=jobposting_id)
-  return render(request, 'jobposting/detail.html', {'jobposting': jobposting})
 
-class JobCreate(CreateView):
+def job_detail(request, job_id):
+  job = JobPosting.objects.get(id=job_id)
+  return render(request, 'jobposting/detail.html', {'job': job})
+
+class JobCreate(LoginRequiredMixin, CreateView):
   model = JobPosting
-  fields = ['title', 'description', 'price']
-  success_url = '/posting/list'
+  fields = ['title', 'description', 'price', 'category', 'location']
+  def form_valid(self, form):
+     job = form.save(commit=False)
+     job.client=self.request.user
+     job.save()
+     return redirect('/')
 
-class JobUpdate(UpdateView):
+class JobUpdate(LoginRequiredMixin, UpdateView):
   model = JobPosting
-  fields = ['title', 'description', 'price']
+  fields = ['title', 'description', 'price', 'category', 'location']
 
-class JobDelete(DeleteView):
+class JobDelete(LoginRequiredMixin, DeleteView):
   model = JobPosting
   success_url = '/'
 
@@ -130,7 +158,7 @@ def freelancer_signup(request):
 def all_freelancers(request):
     # Retrieve all FreelancerProfile objects from the database
     freelancers = FreelancerProfile.objects.all()
-# Filter based on price range
+    # Filter based on price range
     price_filter = request.GET.getlist('price')
     price_query = Q()
     for price in price_filter:
