@@ -12,7 +12,7 @@
 
 {% for jobposting in jobpostings %}
 
-       <a href="{% url 'posting_detail' %}">
+       <a href="{% url 'posting_detail' jobposting.id %}">
         <div>
            <h5> {{ jobposting.title }}</h5>
         </div>
