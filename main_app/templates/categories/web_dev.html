@@ -1,38 +1,97 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Web Development Categories</h1>
+<section class="popular-services">
+   <div class="container-fluid">
+     <h2 class="section-title popular-title">Web Development Categories</h2>
+     <div class="row">
 
-
-   <div>Front-End Development
-      <a href="{% url 'front_end_development_jobs' %}">Jobs</a>
-      <a href="">Freelancers</a>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Front-End Development</h6>
+       <div>
+         <a href="{% url 'front_end_development_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
    </div>
+ </a>
+ </div><!--/col-->
 
-   <div>Back-End Development
-      <a href="{% url 'back_end_development_jobs' %}">Jobs</a>
-      <a href="">Freelancers</a>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Back-End Development</h6>
+       <div>
+         <a href="{% url 'back_end_development_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
    </div>
+ </a>
+ </div><!--/col-->
 
-   <div>Full-Stack Development
-      <a href="{% url 'full_stack_development_jobs' %}">Jobs</a>
-      <a href="">Freelancers</a>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Full-Stack Development</h6>
+       <div>
+         <a href="{% url 'full_stack_development_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
    </div>
+ </a>
+ </div><!--/col-->
 
-   <div>E-Commerce Development
-      <a href="{% url 'e_commerce_development_jobs' %}">Jobs</a>
-      <a href="">Freelancers</a>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">E-Commerce Development</h6>
+       <div>
+         <a href="{% url 'e_commerce_development_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
    </div>
+ </a>
+ </div><!--/col-->
 
-   <div>Web Application Development
-      <a href="{% url 'web_application_development_jobs' %}">Jobs</a>
-      <a href="">Freelancers</a>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Web Application Development</h6>
+       <div>
+         <a href="{% url 'web_application_development_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
    </div>
+ </a>
+ </div><!--/col-->
 
-   <div>Responsive Web Design
-      <a href="{% url 'responsive_web_design_jobs' %}">Jobs</a>
-      <a href="">Freelancers</a>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Responsive Web Design</h6>
+       <div>
+         <a href="{% url 'responsive_web_design_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
    </div>
+ </a>
+ </div><!--/col-->
 
+</div>
+</div>
+</section>
 
 {% endblock %}

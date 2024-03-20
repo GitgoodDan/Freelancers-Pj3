@@ -1,28 +1,65 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fafafa;
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  a:hover{
+    color: #a669e2;
+  }
+body{
+    position: relative;
+}
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0.1px;
+    min-width: 100%; 
+    opacity: 0.9;
+    z-index: -1; 
+  }
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+    pointer-events: none;
+    z-index: -1; 
 }
 
 .navbar-brand {
     font-family: 'Arial Black', sans-serif;
-    font-size: 40px;
-    color: #2E8B57;
+    font-size: 25px;
+    color: white;
     padding: 10px 0 0 20px;
     border-radius: 5px;
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Shadow for depth */
     transition: background-color 0.3s, color 0.3s;
     /* Smooth transition on hover */
 }
-
+.navbar-brand span{
+    color: #a669e2;
+}
 .navbar-brand:hover {
     color: #343a40;
 }
 
 .nav-item {
-    font-size: 25px;
+    font-size: 14px;
     color: black;
-    border-right: 1px gray solid;
-    padding: 0 20px;
+    /* border-right: 1px gray solid; */
+    padding: 0 10px;
+    color: white;
 }
 
 .nav-item:last-child {
@@ -30,92 +67,120 @@ body {
 }
 
 footer {
-    bottom: 0;
-    background-color: #c0e2c2;
+    margin-top: 50px;
+    padding-top: 50px;
+    background-color: rgba(0, 0, 0, 0.9); 
 }
+
+/* Home UI */
 .hero {
-    background-color: #2E8B57;
+    /* background-color: rgba(0, 0, 0, 0.7); */
     color: #fff;
     padding: 100px 0;
+    border-bottom: 1px solid black;
 }
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    color: white;
 }
-
 .hero p {
     font-size: 1.5rem;
-    margin-bottom: 30px;
 }
 
-/* Search Form */
 .form-inline input[type="search"] {
     width: 300px;
 }
-
+.hero-btn {
+    background-color: transparent;
+    border: #a669e2 1px solid;
+    color: lightgray;
+}
 /* Popular Services Section */
 .popular-services {
-    padding: 80px 0;
+    margin: 40px 10%;
 }
-
-.section-title {
+.popular-title {
     text-align: center;
-    margin-bottom: 50px;
+    color: white;
+}
+.popular-card{
+    background: radial-gradient(circle, rgba(228, 232, 236, 0.3), rgba(44, 62, 80, 0.3));
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+    color: white;
+    text-align: center;
+    margin: 50px 0;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.popular-card img {
+    padding-top: 10px;
+    width: 50%;
+    height: 50%;
+}
+.popular-card:hover{
+    box-shadow: 0 10px 18px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
 }
 
-.card {
+
+/* .card {
     margin-bottom: 30px;
     border: none;
-}
-
-.card img {
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-title {
-    font-size: 1.5rem;
+} */
+.why-card-title {
+    font-size: 1rem;
     margin-bottom: 10px;
 }
-
 .card-text {
     font-size: 1rem;
 }
-
 /* Why Freelancer Section */
 .why-freelancer {
-    background-color: #f8f9fa;
+    background: radial-gradient(circle, rgba(228, 232, 236, 0.6), rgba(44, 62, 80, 0.6));
     padding: 80px 0;
 }
-
-.reasons-list {
-    list-style-type: none;
-    padding-left: 0;
+.why-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
-
+.why-freelancer-title{
+    margin-left: 0;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10%;
+}
 .reasons-list li {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
+    list-style-type: none;
+    font-size: 1.3rem;
+    color: rgb(0, 0, 0);
 }
+/* /Why Freelancer Section */
 
 /* Join Section */
 .join-section {
-    background-color: lightgray;
+    /* background: radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(44, 62, 80, 0.8)); */
     color: #fff;
     padding: 60px 0;
     display: grid;
     align-items: center;
     justify-content: center;
 }
-
-.join-section .section-title {
+.join-title {
     margin-bottom: 30px;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
-
 .join-section button {
     width: 100%;
     font-size: larger;
+    padding:9px 150px;
+    border-radius: 0;
 }
 .clientBtn{
-    background-color: #2E8B57;
+    background-color: #a669e2;
 }
+/* /Join Section */

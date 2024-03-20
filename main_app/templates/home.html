@@ -9,64 +9,127 @@
     <p class="lead">Hire top talent for your projects</p>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn hero-btn my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </div>
-
 <!-- Popular Services Section -->
 <section class="popular-services">
-  <div class="container">
-    <h2 class="section-title">Popular Services</h2>
+  <div class="container-fluid">
+    <h2 class="section-title popular-title">Popular Services</h2>
     <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://picsum.photos/10/10" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Service 1</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="#" class="btn btn-primary">Explore</a>
+      
+      <div class="col-md-3">
+        <a href="{% url 'web_dev' %}">
+          <div class="card popular-card">
+            <img src="../static/image/icon3.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title why-card-title">Web Development</h6>
+            </div>
+          </div>
+        </a>
+      </div><!--/col-->
+      
+      <div class="col-md-3">
+        <a href="{% url 'digital_marketing' %}">
+          <div class="card popular-card">
+            <img src="../static/image/icon4.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title why-card-title">Digital Marketing</h6>
+            </div>
+          </div>
+        </a>
+      </div><!--/col-->
+      
+      <div class="col-md-3">
+        <a href="{% url 'mobile_app_dev' %}">
+          <div class="card popular-card">
+            <img src="../static/image/tec.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title why-card-title">Mobile App Development</h6>
+            </div>
+          </div>
+        </a>
+      </div><!--/col-->
+      
+      <div class="col-md-3">
+        <a href="{% url 'cybersecurity' %}">
+          <div class="card popular-card">
+            <img src="../static/image/tec.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title why-card-title">Cybersecurity</h6>
+            </div>
+          </div>
+        </a>
+      </div><!--/col-->
+      
+      <div class="col-md-3">
+        <a href="">
+          <div class="card popular-card">
+            <img src="../static/image/tec.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title why-card-title">UI/UX Developer</h6>
+            </div>
+          </div>
+        </a>
+      </div><!--/col-->
+      
+            <div class="col-md-3">
+              <a href="">
+              <div class="card popular-card">
+                <img src="../static/image/tec.png" class="card-img-top" alt="..." >
+                <div class="card-body">
+                  <h6 class="card-title why-card-title">UI/UX Developer</h6>
+                </div>
+              </div>
+              </a>
+            </div><!--/col-->
+      
+      <div class="col-md-3">
+        <a href="">
+          <div class="card popular-card">
+            <img src="../static/image/tec.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title why-card-title">UI/UX Developer</h6>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://picsum.photos/10/10" class="card-img-top" alt="...">
+      </a>
+      </div><!--/col-->
+
+      <div class="col-md-3">
+        <a href="">
+        <div class="card popular-card">
+          <img src="../static/image/tec.png" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Service 2</h5>
-            <p class="card-text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#" class="btn btn-primary">Explore</a>
+            <h6 class="card-title why-card-title">UI/UX Developer</h6>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://picsum.photos/10/10" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Service 3</h5>
-            <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="#" class="btn btn-primary">Explore</a>
-          </div>
-        </div>
-      </div>
+      </a>
+      </div><!--/col-->
+
     </div>
   </div>
 </section>
 
 <!-- Why Freelancer Section -->
 <section class="why-freelancer">
-  <div class="container">
-    <div class="row">
+  <div class="container ">
+    <div class="row why-container">
       <div class="col-md-6">
-        <h2 class="section-title">Why Freelancer?</h2>
         <ul class="reasons-list">
-          <li>Pay per project.</li>
-          <li>Post a job and hire top talent.</li>
-          <li>Work with the best.</li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/400" class="img-fluid" alt="Join Freelancer">
+          <h2 class="section-title why-freelancer-title">Why Freelancer?</h2>
+          <li><strong>Stick to your budget</strong> 
+            Find the right service for every price point. No hourly rates, just project-based pricing.</li>
+    
+            <li><strong>Get quality work done quickly</strong> 
+              Hand your project over to a talented freelancer in minutes, get long-lasting results.</li>
+          
+              <li><strong>Pay when you're happy</strong> 
+                Upfront quotes mean no surprises. Payments only get released when you approve.</li>
+                </ul>
+       </div> <!--/col-->
+      <div class="col-md-4">
+        <img src="../static/image/Q.png" class="img-fluid" alt="Join Freelancer">
       </div>
     </div>
   </div>
@@ -74,10 +137,14 @@
 
 <!-- Join Section -->
 <section class="join-section">
-    <h2 class="section-title ">Join Freelancer Today</h2>
+    <h2 class="section-title join-title ">Join Freelancer Today</h2>
     <div class="btn-group" role="group" aria-label="Join buttons">
-      <button type="button" class="btn btn-success">For Clients</button>
-      <button type="button" class="btn ">For Talent</button>
+      <a href="{% url 'register' %}">
+      <button type="button" class=" clientBtn" >For Clients </button>
+      </a>
+      <a href="{% url 'register' %}">
+        <button type="button">For Freelancers</button>
+        </a>
   </div>
 </section>
 
