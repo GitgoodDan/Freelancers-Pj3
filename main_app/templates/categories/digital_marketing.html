@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Digital Marketing Jobs</h1>
+
+{% for jobposting in jobpostings_DM %}
+
+       <a href="{% url 'posting_detail' jobposting.id %}">
+        <div>
+           <h5> {{ jobposting.title }}</h5>
+        </div>
+      </a>
+
+
+{% endfor %}
+
+{% endblock %}
