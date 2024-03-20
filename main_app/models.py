@@ -38,10 +38,22 @@ class FreelancerProfile(models.Model):
         ('back_end_developer', 'Back-End Developer'),
         ('full_stack_developer', 'Full Stack Developer'),
     ]
+    LOCATION_TYPES = [  
+        ('us_only', 'US Only'),
+        ('worldwide', 'Worldwide'),
+    ]
+    DELIVERY_TYPES = [  
+        ('express', 'Express 24hrs'),
+        ('up_3_days', 'Up to 3 days'),
+        ('up_7_days', 'Up to 7 days'),
+        ('anytime', 'Anytime'),
+    ]
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     skills = models.TextField()
     portfolio_link = models.URLField()
     hourly_rate = models.DecimalField(max_digits=8, decimal_places=2)
+    delivery_time = models.CharField(max_length=20, choices=DELIVERY_TYPES)
+    located = models.CharField(max_length=20, choices=LOCATION_TYPES)
     type_fl = models.CharField(max_length=20, choices=FREELANCER_TYPES)
     
     def get_absolute_url(self):
