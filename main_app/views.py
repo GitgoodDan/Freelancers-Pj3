@@ -22,33 +22,25 @@ def categories(request):
   return render(request, 'categories/index.html')
 
 def graphic_design_index(request):
-  #  graphic_design = JobPosting.category('graphic_design')
-  #  graphic_design = JobPosting.__getattribute__(category = 'graphic_design')
-  #  graphic_design = JobPosting.__getattribute__(category='category')
-  #  graphic_design = JobPosting.__dir__(category = 'Graphic Design')
-  #  graphic_design = JobPosting.objects.filter(category = 'Graphic Design')
-  #  getattr(JobPosting, category['Graphic Design'])
-  #  return render(request, 'categories/graphic_design.html', {'graphic_design': graphic_design})
-  #  jobs = JobPosting.objects.filter(category='category')
-  #  category = JobPosting.objects.get()
-  #  getattr(category, 'Graphic Design')
-   jobpotings = JobPosting.objects.all()
-  #  return render(request, 'categories/graphic_design.html')
-   return render(request, 'categories/graphic_design.html', {'jobpotings': jobpotings})
-  #  return render(request, 'categories/graphic_design.html', {'category': category})
-  #  return render(request, 'categories/graphic_design.html', {'graphic_design': graphic_design})
+   jobpostings_GD = JobPosting.objects.filter(category = 'graphic_design').values()
+   print(jobpostings_GD)
+   return render(request, 'categories/graphic_design.html', {'jobpostings_GD': jobpostings_GD})
 
 def web_dev_index(request):
-   return render(request, 'categories/web_dev.html')
+   jobpostings_WD = JobPosting.objects.filter(category = 'web_development').values()
+   return render(request, 'categories/web_dev.html', {'jobpostings_WD': jobpostings_WD})
 
 def digital_marketing_index(request):
-   return render(request, 'categories/digital_marketing.html')
+   jobpostings_DM = JobPosting.objects.filter(category = 'digital_marketing').values()
+   return render(request, 'categories/digital_marketing.html', {'jobpostings_DM': jobpostings_DM})
 
 def mobile_app_dev_index(request):
-   return render(request, 'categories/mobile_app_dev.html')
+   jobpostings_MAD = JobPosting.objects.filter(category = 'digital_marketing').values()
+   return render(request, 'categories/mobile_app_dev.html', {'jobpostings_MAD': jobpostings_MAD})
 
 def cybersecurity_index(request):
-   return render(request, 'categories/cybersecurity.html')
+   jobpostings_CS = JobPosting.objects.filter(category = 'digital_marketing').values()
+   return render(request, 'categories/cybersecurity.html', {'jobpostings_CS': jobpostings_CS})
 
 def listings(request):
   return render(request, 'categories/listings.html')
@@ -92,9 +84,9 @@ class FreelancerDelete(DeleteView):
    success_url = '/register'
 
 
-def job_detail(request, jobposting_id):
-  jobposting = JobPosting.objects.get(id=jobposting_id)
-  return render(request, 'jobposting/detail.html', {'jobposting': jobposting})
+def job_detail(request, job_id):
+  job = JobPosting.objects.get(id=job_id)
+  return render(request, 'jobposting/detail.html', {'job': job})
 
 class JobCreate(LoginRequiredMixin, CreateView):
   model = JobPosting
@@ -104,7 +96,6 @@ class JobCreate(LoginRequiredMixin, CreateView):
      job.client=self.request.user
      job.save()
      return redirect('/')
-  success_url = '/'
 
 class JobUpdate(LoginRequiredMixin, UpdateView):
   model = JobPosting
