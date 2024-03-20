@@ -1,17 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Mobile App Development Jobs</h1>
-
-{% for jobposting in jobpostings_MAD %}
-
-       <a href="{% url 'posting_detail' jobposting.id %}">
-        <div>
-           <h5> {{ jobposting.title }}</h5>
-        </div>
-      </a>
+<h1>Mobile App Development Categories</h1>
 
 
-{% endfor %}
+   <div>iOS App Development
+      <a href="{% url 'ios_app_development_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Android App Development
+      <a href="{% url 'andriod_app_development_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Cross-Platform App Development
+      <a href="{% url 'cross_platform_app_development_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Mobile Game Development
+      <a href="{% url 'mobile_game_development_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>App Testing and Quality Assurance
+      <a href="{% url 'app_testing_and_quality_assurance_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>App Maintenance and Updates
+      <a href="{% url 'app_maintenance_and_updates_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
 
 {% endblock %}

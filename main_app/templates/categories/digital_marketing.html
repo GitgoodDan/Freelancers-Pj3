@@ -1,17 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Digital Marketing Jobs</h1>
-
-{% for jobposting in jobpostings_DM %}
-
-       <a href="{% url 'posting_detail' jobposting.id %}">
-        <div>
-           <h5> {{ jobposting.title }}</h5>
-        </div>
-      </a>
+<h1>Digital Marketing Categories</h1>
 
 
-{% endfor %}
+   <div>Search Engine Optimization (SEO)
+      <a href="{% url 'search_engine_optimization_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Social Media Marketing
+      <a href="{% url 'social_media_marketing_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Pay-Per-Click Advertising
+      <a href="{% url 'pay_per_click_advertising_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Content Marketing
+      <a href="{% url 'content_marketing_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Email Marketing
+      <a href="{% url 'email_marketing_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Influencer Marketing
+      <a href="{% url 'influencer_marketing_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Online Reputation Management
+      <a href="{% url 'online_reputation_management_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+
+
 
 {% endblock %}

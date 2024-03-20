@@ -1,17 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Graphic Design Jobs</h1>
-
-{% for jobposting in jobpostings_GD %}
-
-       <a href="{% url 'posting_detail' jobposting.id %}">
-        <div>
-           <h5> {{ jobposting.title }}</h5>
-        </div>
-      </a>
+<h1>Graphic Design Categories</h1>
 
 
-{% endfor %}
+   <div>Logo Design
+      <a href="{% url 'pay_per_click_advertising_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Web U/I Design
+      <a href="{% url 'pay_per_click_advertising_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Mobile U/I Design
+      <a href="{% url 'pay_per_click_advertising_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Illustration
+      <a href="{% url 'pay_per_click_advertising_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Email Design
+      <a href="{% url 'pay_per_click_advertising_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Infographics Design
+      <a href="{% url 'pay_per_click_advertising_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Branding and Identity Design
+      <a href="{% url 'pay_per_click_advertising_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+
+
 
 {% endblock %}

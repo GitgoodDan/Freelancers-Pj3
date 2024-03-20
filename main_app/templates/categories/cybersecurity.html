@@ -1,17 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Cybersecurity Jobs</h1>
-
-{% for jobposting in jobpostings_CS %}
-
-       <a href="{% url 'posting_detail' jobposting.id %}">
-        <div>
-           <h5> {{ jobposting.title }}</h5>
-        </div>
-      </a>
+<h1>Cyber Security Categories</h1>
 
 
-{% endfor %}
+   <div>Network Security
+      <a href="{% url 'network_security_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Ethical Hacking
+      <a href="{% url 'ethical_hacking_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Penetration Testing
+      <a href="{% url 'penetration_testing_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Security Auditing
+      <a href="{% url 'security_auditing_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Data Encryption
+      <a href="{% url 'data_encription_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Incident Response
+      <a href="{% url 'incident_response_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+   <div>Security Compliance
+      <a href="{% url 'security_compliance_jobs' %}">Jobs</a>
+      <a href="">Freelancers</a>
+   </div>
+
+
+
 
 {% endblock %}
