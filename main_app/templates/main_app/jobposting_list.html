@@ -7,13 +7,14 @@
    <button type="submit">Search</button>
 </form>
 
-
+<h1>All Job Postings</h1>
+<ul>
 
 {% for jobposting in jobpostings %}
 
        <a href="{% url 'posting_detail' jobposting.id %}">
         <div>
-           <h5> {{ jobpostings.title }}</h5>
+           <h5> {{ jobposting.title }}</h5>
         </div>
       </a>
 

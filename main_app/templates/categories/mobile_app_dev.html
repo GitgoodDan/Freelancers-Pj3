@@ -3,6 +3,12 @@
 
 <h1>Mobile App Development Jobs</h1>
 
+<h3>Job Search</h3>
+<form action="{% url 'job_search_mad' %}" method="GET">
+   <input type="text" name="q" placeholder="Search For Job">
+   <button type="submit">Search</button>
+</form>
+
 {% for jobposting in jobpostings_MAD %}
 
        <a href="{% url 'posting_detail' jobposting.id %}">
