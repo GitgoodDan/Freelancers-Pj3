@@ -2,12 +2,14 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationForm
 
 from .forms import ClientSignUpForm, FreelancerSignUpForm
 
-from .models import JobPosting, ClientProfile, FreelancerProfile
+from .models import JobPosting, ClientProfile, FreelancerProfile, UserProfile, User
 
 # Create your views here.
 def home(request):
@@ -18,6 +20,35 @@ def about(request):
 
 def categories(request):
   return render(request, 'categories/index.html')
+
+def graphic_design_index(request):
+  #  graphic_design = JobPosting.category('graphic_design')
+  #  graphic_design = JobPosting.__getattribute__(category = 'graphic_design')
+  #  graphic_design = JobPosting.__getattribute__(category='category')
+  #  graphic_design = JobPosting.__dir__(category = 'Graphic Design')
+  #  graphic_design = JobPosting.objects.filter(category = 'Graphic Design')
+  #  getattr(JobPosting, category['Graphic Design'])
+  #  return render(request, 'categories/graphic_design.html', {'graphic_design': graphic_design})
+  #  jobs = JobPosting.objects.filter(category='category')
+  #  category = JobPosting.objects.get()
+  #  getattr(category, 'Graphic Design')
+   jobpotings = JobPosting.objects.all()
+  #  return render(request, 'categories/graphic_design.html')
+   return render(request, 'categories/graphic_design.html', {'jobpotings': jobpotings})
+  #  return render(request, 'categories/graphic_design.html', {'category': category})
+  #  return render(request, 'categories/graphic_design.html', {'graphic_design': graphic_design})
+
+def web_dev_index(request):
+   return render(request, 'categories/web_dev.html')
+
+def digital_marketing_index(request):
+   return render(request, 'categories/digital_marketing.html')
+
+def mobile_app_dev_index(request):
+   return render(request, 'categories/mobile_app_dev.html')
+
+def cybersecurity_index(request):
+   return render(request, 'categories/cybersecurity.html')
 
 def listings(request):
   return render(request, 'categories/listings.html')
@@ -65,16 +96,21 @@ def job_detail(request, jobposting_id):
   jobposting = JobPosting.objects.get(id=jobposting_id)
   return render(request, 'jobposting/detail.html', {'jobposting': jobposting})
 
-class JobCreate(CreateView):
+class JobCreate(LoginRequiredMixin, CreateView):
   model = JobPosting
-  fields = ['title', 'description', 'price']
-  success_url = '/posting/list'
+  fields = ['title', 'description', 'price', 'category', 'location']
+  def form_valid(self, form):
+     job = form.save(commit=False)
+     job.client=self.request.user
+     job.save()
+     return redirect('/')
+  success_url = '/'
 
-class JobUpdate(UpdateView):
+class JobUpdate(LoginRequiredMixin, UpdateView):
   model = JobPosting
-  fields = ['title', 'description', 'price']
+  fields = ['title', 'description', 'price', 'category', 'location']
 
-class JobDelete(DeleteView):
+class JobDelete(LoginRequiredMixin, DeleteView):
   model = JobPosting
   success_url = '/'
 
