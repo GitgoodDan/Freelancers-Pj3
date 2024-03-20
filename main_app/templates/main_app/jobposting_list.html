@@ -2,27 +2,38 @@
 {% block content %}
 
 <body class="freelancers-page">
+   
+   <h1>Job Search</h1>
+   <form action="{% url 'job_search' %}" method="GET">
+      <input type="text" name="q" placeholder="Search For Job">
+      <button type="submit">Search</button>
+   </form>
 
-<h1>Job Search</h1>
-<form action="{% url 'job_search' %}" method="GET">
-   <input type="text" name="q" placeholder="Search For Job">
-   <button type="submit">Search</button>
-</form>
-
-<h1>All Job Postings</h1>
-<ul>
+<section class="popular-services">
+   <div class="container-fluid">
+      <h2 class="section-title popular-title">All Job Postings</h2>
+      <div class="row">
 
 {% for jobposting in jobpostings %}
-   <li>
-       <a href="{% url 'posting_detail' jobposting.id %}">
-        <div>
-           <h5> {{ jobposting.title }}</h5>
-        </div>
-      </a>
-   </li>
-   </ul>
 
+<div class="col-md-3">
+   <a href="{% url 'posting_detail' jobposting.id %}">
+   <div class="card popular-card">
+      <img src="../static/image/tec.png" class="card-img-top" alt="">
+      <div class="card-body">
+       <h6 class="card-title why-card-title"> {{ jobposting.title }}</h6>
+       <div>
+      </div>
+     </div>
+   </div>
+ </a>
+ </a>
+ </div><!--/col-->
+ 
 {% endfor %}
 
+</div>
+</div>
+</section>
 
 {% endblock %}
