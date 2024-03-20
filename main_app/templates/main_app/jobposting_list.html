@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Job List</h1>
+<h1>Job Search</h1>
+<form action="{% url 'job_search' %}" method="GET">
+   <input type="text" name="q" placeholder="Search For Job">
+   <button type="submit">Search</button>
+</form>
+
+
 
 {% for jobposting in jobposting_list %}
 

@@ -81,6 +81,13 @@ class JobDelete(DeleteView):
 class JobList(ListView):
   model = JobPosting
 
+def job_search(request):
+  query = request.GET.get('q')
+  if query:
+    jobs = JobPosting.objects.filter(title__icontains=query)
+  else: jobs = JobPosting.objects.all()
+  return render(request, 'job_search.html', {'jobs': jobs})
+
 def signup(request):
     return render(request, 'registration/register.html')
 

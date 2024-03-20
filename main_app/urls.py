@@ -14,6 +14,7 @@ urlpatterns = [
     path('register/freelancer/', views.reg_freelancer, name='reg_freelancer'),
     path('client_signup/', views.client_signup, name='client_signup'),
     path('freelancer_signup/', views.freelancer_signup, name='freelancer_signup'),
+    path('job_search/', views.job_search, name='job_search'),
     path('posting/create/', views.JobCreate.as_view(), name='posting_create'),
     path('posting/update/', views.JobUpdate.as_view(), name='posting_update'),
     path('posting/delete/', views.JobDelete.as_view(), name='posting_delete'),
