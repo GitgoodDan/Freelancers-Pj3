@@ -3,10 +3,10 @@
 
 <section class="popular-services">
    <div class="container-fluid">
-     <h2 class="section-title popular-title">App Maintenance and Updates Jobs</h2>
+     <h2 class="section-title popular-title">Data Encryption Jobs</h2>
      <div class="row">
 
-{% for jobposting in jobpostings_MAD6 %}
+{% for jobposting in jobpostings_CS5 %}
 
 <div class="col-md-3">
    <a href="{% url 'posting_detail' jobposting.id %}">
@@ -21,6 +21,7 @@
  </a>
  </a>
  </div><!--/col-->
+ 
  
  {% endfor %}
 

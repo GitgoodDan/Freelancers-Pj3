@@ -128,7 +128,7 @@ def andriod_app_development_jobs(request):
 
 def cross_platform_app_development_jobs(request):
     jobpostings_MAD3 = JobPosting.objects.filter(category = 'cross_platform_app_development').values()
-    return render(request, 'mobile_app_dev/cross_platform_app_development_jobs', {'jobpostings_MAD3': jobpostings_MAD3})
+    return render(request, 'mobile_app_dev/cross_platform_app_development_jobs.html', {'jobpostings_MAD3': jobpostings_MAD3})
 
 def mobile_game_development_jobs(request):
     jobpostings_MAD4 = JobPosting.objects.filter(category = 'mobile_game_development').values()
@@ -161,9 +161,9 @@ def security_auditing_jobs(request):
    jobpostings_CS4 = JobPosting.objects.filter(category = 'security_auditing').values()
    return render(request, 'cybersecurity/security_auditing_jobs.html', {'jobpostings_CS4': jobpostings_CS4})
 
-def data_encription_jobs(request):
-   jobpostings_CS5 = JobPosting.objects.filter(category = 'data_encription').values()
-   return render(request, 'cybersecurity/data_encription_jobs.html', {'jobpostings_CS5': jobpostings_CS5})
+def data_encryption_jobs(request):
+   jobpostings_CS5 = JobPosting.objects.filter(category = 'data_encryption').values()
+   return render(request, 'cybersecurity/data_encryption_jobs.html', {'jobpostings_CS5': jobpostings_CS5})
 
 def incident_response_jobs(request):
    jobpostings_CS6 = JobPosting.objects.filter(category = 'incident_response').values()

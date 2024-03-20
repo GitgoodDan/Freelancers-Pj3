@@ -45,7 +45,7 @@ urlpatterns = [
     path('cybersecurity/ethical_hacking_jobs/', views.ethical_hacking_jobs, name='ethical_hacking_jobs'),
     path('cybersecurity/penetration_testing_jobs/', views.penetration_testing_jobs, name='penetration_testing_jobs'),
     path('cybersecurity/security_auditing_jobs/', views.security_auditing_jobs, name='security_auditing_jobs'),
-    path('cybersecurity/data_encription_jobs/', views.data_encription_jobs, name='data_encription_jobs'),
+    path('cybersecurity/data_encryption_jobs/', views.data_encryption_jobs, name='data_encryption_jobs'),
     path('cybersecurity/incident_response_jobs/', views.incident_response_jobs, name='incident_response_jobs'),
     path('cybersecurity/security_compliance_jobs/', views.security_compliance_jobs, name='security_compliance_jobs'),
 
