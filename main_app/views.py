@@ -232,6 +232,14 @@ class JobList(ListView):
   template_name = 'jobposting_list.html'
   context_object_name = 'jobpostings'
 
+def freelancer_search(request):
+    query = request.GET.get('q')
+    freelancers = FreelancerProfile.objects.all()
+
+    if query:
+        freelancers = FreelancerProfile.objects.filter(user__username__icontains=query)
+
+    return render(request, 'freelancer_search.html', {'freelancers': freelancers, 'query': query})
 
 def job_search(request):
   query = request.GET.get('q')
