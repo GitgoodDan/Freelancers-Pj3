@@ -5,6 +5,7 @@
 
     <h1>Freelancers</h1>
     
+    <div class="row">
     {% for freelancer in freelancers %}
     <div class="card freelancer-card">
         <a href="{% url 'freelancer_pub' freelancer_id=freelancer.id %}">
@@ -20,6 +21,7 @@
         </a>
     </div>
     {% endfor %}
+    </div>
 
 </body>
 
