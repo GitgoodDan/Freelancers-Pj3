@@ -41,8 +41,12 @@
           {% elif user.freelancerprofile %}
           <a class="dropdown-item" href="{% url 'prof_freelancer' freelancer_id=user.freelancerprofile.id %}">Account</a>
           {% endif %}
+          <a class="dropdown-item" href="#"><form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+        <button type="submit" class="nav-link" style="background: none; border: none;">Log Out</button>
+      </form>
         </a>
-        </div>
+          </div>
       </li>
       {% else %}
       <li class="nav-item"><a class="nav-link " href="{% url 'login' %}">Log In </a></li>
