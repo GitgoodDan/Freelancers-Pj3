@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <h1>Edit <span class="teal-text">{{ object.name }}</span></h1>
 
+<body class="freelancers-page">
+    <div class="card" style="width: auto;">
+        <div class="card-header">
+            Edit Profile
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <table>
+                  {{ form.as_table }}
+                </table>
+                <input type="submit" value="Submit!" class="btn">
+              </form>
+          </li>
+        </ul>
+      </div>
 
-
-<form action="" method="POST">
-  {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-  </table>
-  <input type="submit" value="Submit!" class="btn">
-</form>
+</body>
 
 {% endblock %}
