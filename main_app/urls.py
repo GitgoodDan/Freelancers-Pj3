@@ -60,6 +60,7 @@ urlpatterns = [
     path('job_search_dm/', views.job_search_dm, name='job_search_dm'),
     path('job_search_mad/', views.job_search_mad, name='job_search_mad'),
     path('job_search_cs/', views.job_search_cs, name='job_search_cs'),
+    path('freelancer_search/', views.freelancer_search, name='freelancer_search'),
     path('posting/list/', views.JobList.as_view(), name='posting_list'),
     path('posting/create/', views.JobCreate.as_view(), name='posting_create'),
     path('posting/<int:pk>/update/', views.JobUpdate.as_view(), name='posting_update'),

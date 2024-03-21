@@ -35,7 +35,9 @@
           <i class="fas fa-user-circle"> {{ user.username }}</i> <!-- Font Awesome icon for user -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
           <p><i class="fas fa-user-circle"></i> {{ user.username }}</p>
+
           {% if user.clientprofile %}
           <a class="dropdown-item" href="{% url 'prof_client' client_id=user.clientprofile.id %}">Account</a>
           {% elif user.freelancerprofile %}
