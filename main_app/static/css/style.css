@@ -16,6 +16,15 @@ body.freelancers-page{
     margin: 0;
     font-family: Arial;
   }
+  body.freelancers-page{
+  background-image: linear-gradient(900deg, #4e4376 0%, #2b5876 100%),
+                    url('path_to_your_image.jpg');
+  /* Background image size and positioning */
+  background-size: cover;
+  background-position: center;
+  /* Background image will not repeat */
+  background-repeat: no-repeat;
+  }
   a{
     text-decoration: none;
     color: white;
@@ -57,12 +66,7 @@ body{
     transition: background-color 0.3s, color 0.3s;
     /* Smooth transition on hover */
 }
-.navbar-brand span{
-    color: #a669e2;
-}
-.navbar-brand:hover {
-    color: #343a40;
-}
+
 
 .nav-item {
     font-size: 14px;
@@ -75,7 +79,10 @@ body{
 .nav-item:last-child {
     border-right: none;
 }
-
+.navbar-toggler{
+    color: white;
+    border: #a669e2 1px solid;
+}
 footer {
     margin-top: 50px;
     padding-top: 50px;
@@ -194,3 +201,264 @@ footer {
     background-color: #a669e2;
 }
 /* /Join Section */
+
+
+/*categories*/
+/*categories-index*/
+
+
+/* .categories-index .row .col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} */
+.roundedCard{
+    background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+    width: 350px; 
+    height: 350px; 
+    background-color: #ffffff;
+    border-radius: 50%; 
+    border: 1px solid #6a0dad; 
+    transition: transform 0.3s ease;
+    margin: 30px;
+}
+.roundedCard:hover{
+    transform: translateY(-5px);
+}
+.subCategories-title{
+    padding-bottom: 30px;
+}
+.subCategories-link{
+    display: inline-block;
+    padding: 7px;
+}
+
+/*all_freelancers*/
+.all_freelancers_container{
+    margin-top: 20px;
+}
+.filter-col{
+    border-right: 2px solid lightgrey;
+    color: white;
+}
+.filterLable{
+    font-weight: bold;
+    font-size: large;
+}
+.mb-3{
+    margin: 50px;
+    padding: 5px;
+}
+.filtersBtn{
+    display: inline;
+    background-color: transparent;
+    border: #a669e2 1px solid;
+    color: white;
+}
+.filtersLink{
+    font-size: 14px;
+    color: white;
+    padding: 8px;
+    border-radius: 1px;
+}
+.freelancer-card{
+    margin: 10px;
+
+}
+.freelancer-card div label{
+font-weight: bold;
+}
+.freelancer-card{
+    background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+    border: 1px solid #6a0dad; 
+    transition: transform 0.3s ease;
+    margin-left: 30px;
+    width: 200px;
+}
+.freelancer-card h6{
+    border-bottom: 1px gray solid;
+}
+/*registration*/
+.registration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+.registration a{
+    text-decoration: none;
+}
+.registration-card{
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+    color: white;
+    text-align: center;
+    margin: 50px 0;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.registration-card:hover{
+    box-shadow: 0 10px 18px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
+}
+
+/* login */
+
+.log-container h3{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+}
+.log-form {
+    max-width: 430px;
+    margin: 50px auto 180px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+
+}
+
+/* Style the form fields */
+.log-form input[type="text"],
+.log-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* Style the submit button */
+.log-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Hover effect on the submit button */
+.log-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.create-account{
+    padding-top: 20px;
+    text-align: center;
+}
+.create-account a {
+    display: inline; 
+    color:#a669e2;
+  }
+.signupContainer{
+    color: white;
+    margin: 20px;
+    padding-left: 40px;
+    margin-right: 100px;
+}
+.signup-form{
+    margin-right: 35px;
+}
+.signUptitle{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.signUpInput{
+    background-color: transparent;
+    border: #a669e2 1px solid;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+.signUpBtn{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.signUpBtn:hover{
+    background-color: transparent;
+    border: #a669e2 1px solid;
+    color: white;
+}
+.have-accountCoontainer{
+    display: flex;
+    align-items: center;
+    border-left:1px solid lightgray ;
+}
+.have-account{
+    margin-bottom: 40px;
+    padding-left: 30px;
+    text-align: center;
+}
+.have-account a {
+    color:#a669e2;
+  }
+
+.signUpForm{
+    max-width: 400px;
+    color: white;
+    margin-left: 40px;
+}
+.signUptitle{
+    color: white;
+    margin-left: 20px;
+}
+.signUpForm label{
+    color: white;
+}
+.signUpForm p{
+    color: white;
+}
+.signUpForm input{
+    background-color: transparent;
+    border: #a669e2 1px solid;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+.signUpForm select{
+    background-color: transparent;
+    border: #a669e2 1px solid;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+.signUpForm select option{
+    color: black;
+}
+.signUpForm button{
+    background-color: lightgray;
+    border: #a669e2 1px solid;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+}
+.signUpForm button:hover{
+    background-color: transparent;
+    border: #a669e2 1px solid;
+    color: white;
+}
+.signUpForm span{
+    color: lightgray;
+    display: none;
+}
+.signUpForm ul{
+    display: none;
+}

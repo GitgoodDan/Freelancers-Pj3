@@ -3,8 +3,6 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
-
-
 class ClientProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=255)
@@ -110,6 +108,16 @@ class JobPosting(models.Model):
         choices=JOB_LOCATIONS, 
         max_length=16,
         default=JOB_LOCATIONS[0][0])
+    TIMEFRAME_OPTIONS = [
+        ('1to3months', '1 - 3 Months'),
+        ('3to6months', '3 - 6 Months'),
+        ('morethan6months', 'More than 6 months')
+    ]
+    timeframe = models.CharField(
+        choices=TIMEFRAME_OPTIONS, 
+        max_length=24,
+        default=JOB_CATEGORIES[0][0])
+
     TIMEFRAME_OPTIONS = [
         ('1to3months', '1 - 3 Months'),
         ('3to6months', '3 - 6 Months'),

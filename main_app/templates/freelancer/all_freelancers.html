@@ -2,43 +2,33 @@
 
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>All Freelancers</h1>
-<div class="container-fluid mt-5">
+<body class="freelancers-page">
+<div class="container-fluid all_freelancers_container">
     <div class="row">
         <!-- Left Column for Filtering -->
-        <div class="col-md-3">
+        <div class="col-md-3 filter-col">
             <form method="GET">
-                <h4>Filters</h4>
-                <div class="mb-3">
-                    <label for="price">Price:</label>
+                <div class="mb-3 ">
+                    <label for="price" class="filterLable">Price:</label>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="price" value="under20" id="under20">
-                        <label class="form-check-label" for="under20">
-                            Under $20
-                        </label>
+                        <label class="form-check-label" for="under20">Under $20</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="price" value="20to50" id="20to50">
-                        <label class="form-check-label" for="20to50">
-                            $20 - $50
-                        </label>
+                        <label class="form-check-label" for="20to50">$20 - $50</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="price" value="50to100" id="50to100">
-                        <label class="form-check-label" for="50to100">
-                            $50 - $100
-                        </label>
+                        <label class="form-check-label" for="50to100">$50 - $100</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="price" value="over100" id="over100">
-                        <label class="form-check-label" for="over100">
-                            Over $100
-                        </label>
+                        <label class="form-check-label" for="over100">Over $100</label>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="delivery">Delivery Time:</label>
+                    <label for="delivery" class="filterLable">Delivery Time:</label>
                     <select name="delivery" id="delivery" class="form-control">
                         <option value="">Any</option>
                         <option value="1">Express 24hrs </option>
@@ -48,7 +38,7 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="country">Location:</label>
+                    <label for="country" class="filterLable">Location:</label>
                     <select name="country" id="country" class="form-control">
                         <option value="">Any</option>
                         <option value="us_only">USA Only</option>
@@ -56,8 +46,10 @@
                         <!-- Add more options as needed -->
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Apply Filters</button>
-                <a href="?">Clear Filters</a> <!-- Link to clear filters -->
+                <div class="mb-3">
+                <button type="submit" class="btn filtersBtn ">Go</button>
+                <a class="filtersLink" href="?"><i class="fas fa-times"></i> Clear Filters</a> <!-- Link to clear filters -->
+                </div>
             </form>
             {% if messages %}
             <div class="container">
@@ -77,22 +69,23 @@
         <!-- //Left Column -->
 
         <!-- Right Column -->
-        <div class="col-md-9">
+        <div class="col">
             <div class="row">
                 {% for freelancer in freelancers %}
-                <div class="col-md-4 mb-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="https://picsum.photos/10/10" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Added by <strong>{{ freelancer.user.username }}</strong></h5>
-                            <p class="card-text">Type: <strong>{{ freelancer.get_type_fl_display }}</strong></p>
-                            <p class="card-text">Skills: <strong>{{ freelancer.skills }}</strong></p>
-                            <a href="{{ freelancer.portfolio_link }}" class="btn btn-primary">Portfolio</a>
-                        </div>
+                    <div class="card freelancer-card">
+                    <a href="">
+                     <img class="card-img-top" src="https://picsum.photos/2/2" alt="Card image cap">
+                      <div class="card-body ">
+                        <h6 class="card-title">Added by <strong>{{ freelancer.user.username }}</strong></h6>
+                        <p class="card-text ">Title: <strong>{{ freelancer.get_type_fl_display }}</strong></p>
+                        <p class="card-text">Skills: <strong>{{ freelancer.skills }}</strong></p></div>
+                      <div class="card-footer">
+                        <small class="text-muted">{{ freelancer.hourly_rate }}</small>
+                      </div>
+                    </a>
                     </div>
-                </div>
                 {% endfor %}
-            </div>
+            </div><!--//row-->
         </div><!-- //Right Column -->
     </div><!--//row-->
 </div> <!--//container-fluid-->
