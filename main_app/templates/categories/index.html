@@ -1,95 +1,81 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>categories</h1> <!--<span class="teal-text">{{object.name}}</span>-->
+<h1>{{ jobposting.title }}</h1> 
     
+<div class="container categories-index">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card roundedCard bg-transparent">
+        <div class="card-body text-center  d-flex flex-column justify-content-center">
+          <h2 class="card-title text-white subCategories-title">Graphic Design</h2>
+          <a href="{% url 'all_freelancers' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'graphic_design' %}"  class="subCategories-link">Open Vacancies</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card  bg-transparent  roundedCard">
+        <div class="card-body text-center  d-flex flex-column justify-content-center ">
+          <h2 class="card-title text-white subCategories-title">Logo Design</h2>
+          <a href="{% url 'all_freelancers' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'graphic_design' %}" class="subCategories-link">Open Vacancies</a>
+        </div>
+      </div>
+    </div><!--/col-->
+    <div class="col-md-4 mb-4">
+      <div class="card  bg-transparent  roundedCard">
+        <div class="card-body text-center  d-flex flex-column justify-content-center">
+          <h2 class="card-title text-white subCategories-title">Web UI Design</h2>
+          <a href="{% url 'all_freelancers' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'graphic_design' %}" class="subCategories-link">Open Vacancies</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-    <a href="{% url 'graphic_design' %}">
-        <div class="card bg-dark text-white">
-            <img src="https://picsum.photos/10/10" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <h2 class="card-title">Graphic Design</h2>
-            </div>
-          </div>
-<div class="container-fluid">
-  <div class="col">
-    <a href="{% url 'subCategories' %}">
-      <div class="card bg-dark text-white">
-        <img src="https://picsum.photos/10/10" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h2 class="card-title">Logo Design</h2>
-          <a href="{% url 'all_freelancers' %}" class="card-link">Hire a Talent</a>
-          <a href="{% url 'posting_list' %}" class="card-link">Open Vacancies</a>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card  bg-transparent  roundedCard">
+        <div class="card-body text-center  d-flex flex-column justify-content-center">
+          <h2 class="card-title text-white subCategories-title">Illustration</h2>
+          <a href="{% url 'all_freelancers' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'graphic_design' %}" class="subCategories-link">Open Vacancies</a>
         </div>
       </div>
-    </a>
-  </div><!--//col-->
-  <div class="col">
-    <a href="{% url 'subCategories' %}">
-      <div class="card bg-dark text-white">
-        <img src="https://picsum.photos/10/10" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h2 class="card-title">Web UI Design</h2>
-          <a href="{% url 'subCategories' %}" class="card-link">Hire a Talent</a>
-          <a href="{% url 'posting_list' %}" class="card-link">Open Vacancies</a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card  bg-transparent  roundedCard">
+        <div class="card-body text-center  d-flex flex-column justify-content-center">
+          <h2 class="card-title text-white subCategories-title">Email Design</h2>
+          <a href="{% url 'subCategories' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'posting_list' %}" class="subCategories-link">Open Vacancies</a>
         </div>
       </div>
-    </a>
-  </div><!--//col-->
-  <div class="col">
-    <a href="{% url 'subCategories' %}">
-      <div class="card bg-dark text-white">
-        <img src="https://picsum.photos/10/10" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h2 class="card-title">Illustration</h2>
-          <a href="{% url 'subCategories' %}" class="card-link">Hire a Talent</a>
-          <a href="{% url 'posting_list' %}" class="card-link">Open Vacancies</a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card  bg-transparent  roundedCard">
+        <div class="card-body text-center  d-flex flex-column justify-content-center">
+          <h2 class="card-title text-white subCategories-title">Infographics Design</h2>
+          <a href="{% url 'subCategories' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'posting_list' %}" class="subCategories-link">Open Vacancies</a>
         </div>
       </div>
-    </a>
-  </div><!--//col-->
+    </div>
+  </div>
 
-  <div class="col">
-    <a href="{% url 'subCategories' %}">
-      <div class="card bg-dark text-white">
-        <img src="https://picsum.photos/10/10" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h2 class="card-title">Email Design</h2>
-          <a href="{% url 'subCategories' %}" class="card-link">Hire a Talent</a>
-          <a href="{% url 'posting_list' %}" class="card-link">Open Vacancies</a>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card  bg-transparent  roundedCard">
+        <div class="card-body text-center d-flex flex-column justify-content-center">
+          <h2 class="card-title text-white subCategories-title">Branding and Identity Design</h2>
+          <a href="{% url 'subCategories' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'posting_list' %}" class="subCategories-link">Open Vacancies</a>
         </div>
       </div>
-    </a>
-  </div><!--//col-->
-
-  <div class="col">
-    <a href="{% url 'subCategories' %}">
-      <div class="card bg-dark text-white">
-        <img src="https://picsum.photos/10/10" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h2 class="card-title">Infographics Design</h2>
-          <a href="{% url 'subCategories' %}" class="card-link">Hire a Talent</a>
-          <a href="{% url 'posting_list' %}" class="card-link">Open Vacancies</a>
-        </div>
-      </div>
-    </a>
-  </div><!--//col-->
-
-  <div class="col">
-    <a href="{% url 'subCategories' %}">
-      <div class="card bg-dark text-white">
-        <img src="https://picsum.photos/10/10" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h2 class="card-title">Branding and Identity Design</h2>
-          <a href="{% url 'subCategories' %}" class="card-link">Hire a Talent</a>
-          <a href="{% url 'posting_list' %}" class="card-link">Open Vacancies</a>
-        </div>
-      </div>
-    </a>
-  </div><!--//col-->
+    </div>
+    <!-- Add more cards here if needed -->
+  </div>
 </div>
-
 
 {% endblock %}

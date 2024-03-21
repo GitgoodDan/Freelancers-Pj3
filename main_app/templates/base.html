@@ -19,21 +19,19 @@
   <video autoplay muted loop id="myVideo">
     <source src="../static/video/bgv.mp4" type="video/mp4">
   </video>
-  <div class="overlay"></div>
   
+  <div class="overlay"></div>
   <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="/"><span>F</span>reelancer</a>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><a class="nav-link " href="{% url 'posting_list' %}">All Jobs</a></li>
       {% if user.is_authenticated %}
-      {% if user.clientprofile %}
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user-circle"> {{ user.username }}</i> <!-- Font Awesome icon for user -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <p><i class="fas fa-user-circle"></i> {{ user.username }}!</p>
-          <a class="dropdown-item" href="{% url 'prof_client' client_id=user.clientprofile.id %}">Account</a>
+          <a class="dropdown-item" href="">Account</a>
           <a class="dropdown-item" href="#"><form action="{% url 'logout' %}" method="post">
           {% csrf_token %}
         <button type="submit" class="nav-link" style="background: none; border: none;">Log Out</button>
@@ -43,28 +41,6 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'posting_create' %}">Post New Job</a>
-                  </li>
-            {% elif user.freelancerprofile %}
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-user-circle"> {{ user.username }}</i> <!-- Font Awesome icon for user -->
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <p><i class="fas fa-user-circle"></i> {{ user.username }}!</p>
-                  <a class="dropdown-item" href="{% url 'prof_freelancer' freelancer_id=user.freelancerprofile.id %}">Account</a>
-                  <a class="dropdown-item" href="#"><form action="{% url 'logout' %}" method="post">
-                  {% csrf_token %}
-                <button type="submit" class="nav-link" style="background: none; border: none;">Log Out</button>
-              </form>
-                </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            {% endif %}
-      
       {% else %}
       <li class="nav-item"><a class="nav-link " href="{% url 'login' %}">Log In </a></li>
       <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
@@ -73,7 +49,7 @@
 
   <!--Navbar 2nd layer-->
   <nav class="navbar navbar-expand-lg">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -81,7 +57,7 @@
       <ul class="navbar-nav mx-auto">
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'graphic_design' %}">Graphic Design <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'categories' %}">Graphic Design <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'web_dev' %}">Web Development </a>
@@ -95,6 +71,11 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'cybersecurity' %}">Cybersecurity  </a>
         </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'posting_create' %}">Post New Job</a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </nav>
