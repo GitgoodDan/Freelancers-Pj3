@@ -1,10 +1,10 @@
 # Freelancer
 
-Freelancer is a dynamic web application designed to revolutionize the way individuals and businesses connect with skilled professionals for short-term projects. In a rapidly evolving gig economy, Freelancer serves as a centralized platform where clients can effortlessly find and engage with independent contractors who possess the specific skills and expertise required to complete their projects efficiently and effectively.
+   Freelancer is a dynamic web application designed to revolutionize the way individuals and businesses connect with skilled professionals for short-term projects. In a rapidly evolving gig economy, Freelancer serves as a centralized platform where clients can effortlessly find and engage with independent contractors who possess the specific skills and expertise required to complete their projects efficiently and effectively.
 
- Whether you're a startup seeking web development expertise, a creative professional in need of graphic design services, or a small business owner requiring marketing assistance, Freelancer streamlines the process of sourcing talent. Our platform empowers users to browse through a diverse pool of freelancers, review their portfolios, and engage in direct communication to outline project requirements and expectations.
+   Whether you're a startup seeking web development expertise, a creative professional in need of graphic design services, or a small business owner requiring marketing assistance, Freelancer streamlines the process of sourcing talent. Our platform empowers users to browse through a diverse pool of freelancers, review their portfolios, and engage in direct communication to outline project requirements and expectations.
 
-With Freelancer, clients can tap into a vast network of skilled individuals across various industries, ensuring access to top-tier talent tailored to their unique project needs. By facilitating seamless connections between clients and freelancers, we aim to foster collaboration, innovation, and mutual success in the ever-expanding landscape of freelance work.
+   With Freelancer, clients can tap into a vast network of skilled individuals across various industries, ensuring access to top-tier talent tailored to their unique project needs. By facilitating seamless connections between clients and freelancers, we aim to foster collaboration, innovation, and mutual success in the ever-expanding landscape of freelance work.
 
 # Screenshot
 
