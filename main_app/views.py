@@ -344,7 +344,7 @@ def all_freelancers(request):
 
     if price_query:
         freelancers = freelancers.filter(price_query)
-        messages.info(request, f"Price range: {', '.join(price_filter)}")
+        messages.info(request, f"Price range: ${', '.join(price_filter)}")
 
     # Filter based on delivery time
     delivery_filter = request.GET.get('delivery')
