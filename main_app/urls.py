@@ -72,5 +72,5 @@ urlpatterns = [
     path('profile/freelancer/<int:pk>/update', views.FreelancerUpdate.as_view(), name='freelancer_update'),
     path('profile/freelancer/<int:pk>/delete', views.FreelancerDelete.as_view(), name='freelancer_delete'),
     path('profile/freelancer/', views.all_freelancers, name='all_freelancers'),
-
+    path('freelancer/<int:freelancer_id>/', views.freelancer_public, name='freelancer_pub'),
 ]
