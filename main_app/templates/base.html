@@ -36,11 +36,11 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <p><i class="fas fa-user-circle"></i> {{ user.username }}</p>
+          {% if user.clientprofile %}
           <a class="dropdown-item" href="{% url 'prof_client' client_id=user.clientprofile.id %}">Account</a>
-          <a class="dropdown-item" href="#"><form action="{% url 'logout' %}" method="post">
-          {% csrf_token %}
-        <button type="submit" class="nav-link" style="background: none; border: none;">Log Out</button>
-      </form>
+          {% elif user.freelancerprofile %}
+          <a class="dropdown-item" href="{% url 'prof_freelancer' freelancer_id=user.freelancerprofile.id %}">Account</a>
+          {% endif %}
         </a>
         </div>
       </li>
