@@ -2,14 +2,22 @@
 {% block content %}
 <body class="freelancers-page">
 
-    <h1>{{ client.user.username }}'s Profile</h1>
-    <p>Company: {{  client.company }} </p>
-    <p>Address: {{ client.address }}</p>
-    <p>Phone: {{ client.phone_number }}</p>
-    <p>Email: {{ client.user.email }}</p>
-    <div class="card-action">
-        <a href="{% url 'client_update' client.id %}">Edit</a>
-        <a href="{% url 'client_delete' client.id %}">Delete</a>
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            <h1>{{ client.user.username }}'s Profile</h1>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Company: {{  client.company }}</li>
+          <li class="list-group-item">Address: {{ client.address }}</li>
+          <li class="list-group-item">Phone: {{ client.phone_number }}</li>
+          <li class="list-group-item">Email: {{ client.user.email }}</li>
+          <div class="card-footer">
+            <div class="card-action-edits">
+                <a href="{% url 'client_update' client.id %}">Edit</a>
+                <a href="{% url 'client_delete' client.id %}">Delete</a>
+              </div>
+          </div>
+        </ul>
       </div>
 
 </body>

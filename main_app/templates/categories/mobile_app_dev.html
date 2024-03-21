@@ -1,23 +1,98 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Mobile App Development Jobs</h1>
 
-<h3>Job Search</h3>
-<form action="{% url 'job_search_mad' %}" method="GET">
-   <input type="text" name="q" placeholder="Search For Job">
-   <button type="submit">Search</button>
-</form>
+<section class="popular-services">
+   <div class="container-fluid">
+     <h2 class="section-title popular-title">Mobile App Development Categories</h2>
+     <div class="row">
 
-{% for jobposting in jobpostings_MAD %}
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">iOS App Development</h6>
+       <div>
+         <a href="{% url 'ios_app_development_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
 
-       <a href="{% url 'posting_detail' jobposting.id %}">
-        <div>
-           <h5> {{ jobposting.title }}</h5>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Android App Development</h6>
+       <div>
+         <a href="{% url 'andriod_app_development_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
+ 
+ <div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Cross-Platform App Development</h6>
+       <div>
+         <a href="{% url 'cross_platform_app_development_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
         </div>
-      </a>
+      </div>
+    </div>
+  </a>
+</div><!--/col-->
 
+<div class="col-md-3">
+  <div class="card popular-card">
+    <img src="../static/image/tec.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title why-card-title">Mobile Game Development</h6>
+      <div>
+        <a href="{% url 'mobile_game_development_jobs' %}">Jobs</a>
+        <a href="">Freelancers</a>
+      </div>
+    </div>
+  </div>
+</a>
+</div><!--/col-->
 
-{% endfor %}
+<div class="col-md-3">
+  <div class="card popular-card">
+    <img src="../static/image/tec.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title why-card-title">App Testing and Quality Assurance</h6>
+      <div>
+        <a href="{% url 'app_testing_and_quality_assurance_jobs' %}">Jobs</a>
+        <a href="">Freelancers</a>
+      </div>
+    </div>
+  </div>
+</a>
+</div><!--/col-->
+
+<div class="col-md-3">
+  <div class="card popular-card">
+    <img src="../static/image/tec.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title why-card-title">App Maintenance and Updates</h6>
+      <div>
+        <a href="{% url 'app_maintenance_and_updates_jobs' %}">Jobs</a>
+        <a href="">Freelancers</a>
+      </div>
+    </div>
+  </div>
+</a>
+</div><!--/col-->
+
+</div>
+</div>
+</section>
 
 {% endblock %}

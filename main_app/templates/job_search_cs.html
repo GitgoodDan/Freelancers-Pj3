@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+<body class="freelancers-page">
 
-<h1>Job Listings</h1>
+    <h1>Job Listings</h1>
+    
+    <ul>
+        {% for job in jobs %}
+        <li><a href="{% url 'posting_detail' job.id %}">{{ job.title }}</a></li>
+        {% endfor %}
+    </ul>
 
-<ul>
-    {% for job in jobs %}
-    <li><a href="{% url 'posting_detail' job.id %}">{{ job.title }}</a></li>
-    {% endfor %}
-</ul>
+</body>
 
 {% endblock %}

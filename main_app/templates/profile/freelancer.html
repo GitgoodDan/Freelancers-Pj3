@@ -3,16 +3,24 @@
 
 <body class="freelancers-page">
 
-    <h1>{{ freelancer.user.username }}'s Profile</h1>
-    <p>Field: {{ freelancer.get_type_fl_display }}</p>
-    <p>Base Rate: ${{  freelancer.hourly_rate }} </p>
-    <p>Skills: {{ freelancer.skills }}</p>
-    <p>Portfolio: <a href="{{ freelancer.portfolio_link }}">{{ freelancer.portfolio_link }}</a></p>
-    <div class="card-action">
-        <a href="{% url 'freelancer_update' freelancer.id %}">Edit</a>
-        <a href="{% url 'freelancer_delete' freelancer.id %}">Delete</a>
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            <h1>{{ freelancer.user.username }}'s Profile</h1>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Field: {{ freelancer.get_type_fl_display }}</li>
+          <li class="list-group-item">Base Rate: ${{  freelancer.hourly_rate }} </li>
+          <li class="list-group-item">Skills: {{ freelancer.skills }}</li>
+          <li class="list-group-item">Portfolio: <a href="{{ freelancer.portfolio_link }}">{{ freelancer.portfolio_link }}</a></li>
+          <div class="card-footer">
+            <div class="card-action-edits">
+                <a href="{% url 'freelancer_update' freelancer.id %}">Edit</a>
+                <a href="{% url 'freelancer_delete' freelancer.id %}">Delete</a>
+              </div>
+          </div>
+        </ul>
       </div>
-
+      
 </body>
 
-{% endblock %}`
+{% endblock %}

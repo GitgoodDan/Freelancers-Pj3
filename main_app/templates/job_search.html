@@ -1,12 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Job Listings</h1>
+<body class="freelancers-page">
 
-<ul>
-    {% for job in jobs %}
-    <li><a href="{% url 'posting_detail' job.id %}">{{ job.title }}</a></li>
-    {% endfor %}
-</ul>
+    <h1>Job Listings</h1>
+    
+    <ul>
+        {% for job in jobs %}
+
+        <li>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="{% url 'posting_detail' job.id %}">{{ job.title }}</a></h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary"> Pay: ${{ job.price }}</h6>
+                </div>
+              </div>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+
+    
+</body>
+
 
 {% endblock %}

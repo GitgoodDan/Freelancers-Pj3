@@ -1,23 +1,113 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Cybersecurity Jobs</h1>
 
-<h3>Job Search</h3>
-<form action="{% url 'job_search_cs' %}" method="GET">
-   <input type="text" name="q" placeholder="Search For Job">
-   <button type="submit">Search</button>
-</form>
+<section class="popular-services">
+   <div class="container-fluid">
+     <h2 class="section-title popular-title">Cyber Security Categories</h2>
+     <div class="row">
 
-{% for jobposting in jobpostings_CS %}
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Network Security</h6>
+       <div>
+         <a href="{% url 'network_security_jobs' %}">Jobs</a> |
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
 
-       <a href="{% url 'posting_detail' jobposting.id %}">
-        <div>
-           <h5> {{ jobposting.title }}</h5>
-        </div>
-      </a>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Ethical Hacking</h6>
+       <div>
+         <a href="{% url 'ethical_hacking_jobs' %}">Jobs</a> |
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
 
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Penetration Testing</h6>
+       <div>
+         <a href="{% url 'penetration_testing_jobs' %}">Jobs</a> |
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
 
-{% endfor %}
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Security Auditing</h6>
+       <div>
+         <a href="{% url 'security_auditing_jobs' %}">Jobs</a> |
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
+
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Data Encryption</h6>
+       <div>
+         <a href="{% url 'data_encryption_jobs' %}">Jobs</a> |
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
+
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Incident Response</h6>
+       <div>
+         <a href="{% url 'incident_response_jobs' %}">Jobs</a> |
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
+
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Security Compliance</h6>
+       <div>
+         <a href="{% url 'security_compliance_jobs' %}">Jobs</a> |
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
+
+</div>
+</div>
+</section>
+
 
 {% endblock %}

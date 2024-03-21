@@ -1,23 +1,113 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Graphic Design Jobs</h1>
+<section class="popular-services">
+   <div class="container-fluid">
+     <h2 class="section-title popular-title">Graphic Design Categories</h2>
+     <div class="row">
 
-<h3>Job Search</h3>
-<form action="{% url 'job_search_gd' %}" method="GET">
-   <input type="text" name="q" placeholder="Search For Job">
-   <button type="submit">Search</button>
-</form>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Logo Design</h6>
+       <div>
+         <a href="{% url 'logo_design_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
 
-{% for jobposting in jobpostings_GD %}
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Web U/I Design</h6>
+       <div>
+         <a href="{% url 'web_ui_design_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
 
-       <a href="{% url 'posting_detail' jobposting.id %}">
-        <div>
-           <h5> {{ jobposting.title }}</h5>
-        </div>
-      </a>
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Mobile U/I Design</h6>
+       <div>
+         <a href="{% url 'mobile_ui_design_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
+
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Illustration</h6>
+       <div>
+         <a href="{% url 'illustration_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
+
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Email Design</h6>
+       <div>
+         <a href="{% url 'email_design_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
+
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Infographics Design</h6>
+       <div>
+         <a href="{% url 'infographics_design_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
+
+<div class="col-md-3">
+   <div class="card popular-card">
+     <img src="../static/image/tec.png" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h6 class="card-title why-card-title">Branding and Identity Design</h6>
+       <div>
+         <a href="{% url 'branding_and_identity_design_jobs' %}">Jobs</a>
+         <a href="">Freelancers</a>
+      </div>
+     </div>
+   </div>
+ </a>
+ </div><!--/col-->
 
 
-{% endfor %}
+</div>
+</div>
+</section>
+
 
 {% endblock %}

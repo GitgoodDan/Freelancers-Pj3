@@ -1,7 +1,8 @@
 * {
     box-sizing: border-box;
   }
-  body.freelancers-page{
+
+body.freelancers-page{
     background-image: linear-gradient(900deg, #4E4376 0%, #2B5876 100%),
                       url('path_to_your_image.jpg');
     /* Background image size and positioning */
@@ -10,7 +11,7 @@
     /* Background image will not repeat */
     background-repeat: no-repeat;
     }
-    
+  
   body {
     margin: 0;
     font-family: Arial;
