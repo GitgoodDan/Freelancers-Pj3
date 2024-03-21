@@ -3,8 +3,6 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
-
-
 class ClientProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=255)
@@ -77,4 +75,3 @@ class JobPosting(models.Model):
         choices=JOB_LOCATIONS, 
         max_length=16,
         default=JOB_LOCATIONS[0][0])
-
