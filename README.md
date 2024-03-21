@@ -8,8 +8,9 @@
 
 # Screenshot
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+<img src="https://ibb.co/SX8D3Hk">
+<img src="https://ibb.co/4N0WCKC">
+<img src="https://ibb.co/g3LZ09s">
 
 # Technologies Used
 
