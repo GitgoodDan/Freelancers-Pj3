@@ -28,6 +28,7 @@
       {% if user.is_authenticated %}
       {% if user.clientprofile %}
       <li class="nav-item"><a class="nav-link " href="{% url 'all_freelancers' %}">All Freelancers</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'posting_create' %}">Post New Job</a></li>
       {% endif %}
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,7 +36,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <p><i class="fas fa-user-circle"></i> {{ user.username }}!</p>
-          <a class="dropdown-item" href="">Account</a>
+          <a class="dropdown-item" href="{% url 'prof_client' client_id=user.clientprofile.id %}">Account</a>
           <a class="dropdown-item" href="#"><form action="{% url 'logout' %}" method="post">
           {% csrf_token %}
         <button type="submit" class="nav-link" style="background: none; border: none;">Log Out</button>
@@ -61,7 +62,7 @@
       <ul class="navbar-nav mx-auto">
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'categories' %}">Graphic Design <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'graphic_design' %}">Graphic Design <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'web_dev' %}">Web Development </a>
@@ -75,11 +76,6 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'cybersecurity' %}">Cybersecurity  </a>
         </li>
-        {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'posting_create' %}">Post New Job</a>
-        </li>
-        {% endif %}
       </ul>
     </div>
   </nav>
