@@ -22,7 +22,7 @@
 # Getting Started
 
 [Click to View Project Planning](https://trello.com/b/i8ryYQUm/projrct-3)
-[Click to Play Connect Four!](your deployment url here)
+[Click to Launch Freelancer!](https://freelancer-1-af9ba9d1a80b.herokuapp.com/)
 
 # Next Steps
 
