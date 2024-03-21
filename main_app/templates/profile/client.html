@@ -2,7 +2,7 @@
 {% block content %}
 <body class="freelancers-page">
 
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 18rem; margin-left: 35%;">
         <div class="card-header">
             <h1>{{ client.user.username }}'s Profile</h1>
         </div>
@@ -13,8 +13,8 @@
           <li class="list-group-item">Email: {{ client.user.email }}</li>
           <div class="card-footer">
             <div class="card-action-edits">
-                <a href="{% url 'client_update' client.id %}">Edit</a>
-                <a href="{% url 'client_delete' client.id %}">Delete</a>
+                <a class="profile" href="{% url 'client_update' client.id %}">Edit</a> |
+                <a class="profile" href="{% url 'client_delete' client.id %}">Delete</a>
               </div>
           </div>
         </ul>
