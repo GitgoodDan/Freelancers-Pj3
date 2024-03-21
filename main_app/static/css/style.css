@@ -532,6 +532,10 @@ font-weight: bold;
     border-radius: 5px;
 }
 
+.signUpForm th {
+    margin-left: 16px;
+}
+
 .signUpForm ul{
     display: none;
 }
