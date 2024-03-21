@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<body class="freelancers-page">
+
   <h1>Delete Job</h1>
 
   <h4>Are you sure you want to delete {{ object.name }}?</h4>
@@ -10,4 +13,6 @@
     <input type="submit" value="Yes - Delete!" class="btn">
     <a href="{% url 'home' %}">Cancel</a>
   </form>
+
+</body>
 {% endblock %}

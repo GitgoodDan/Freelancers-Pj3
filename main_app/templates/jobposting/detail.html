@@ -1,22 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<div>
-    <h1>Job Details</h1>
-    <br>
-    <h3>{{job.title}}</h3>
-    <br>
-    <h5>Description:</h5>
-    <p>{{job.description}}</p>
-    <br>
-    <h5>Category:</h5>
-    <p>{{job.get_category_display}}</p>
-    <br>
-    <h5>Rate:</h5>
-    <p>${{job.price}}</p>
-    <br>
-    <h5>Location:</h5>
-    <p>{{ job.get_location_display }}</p>
-</div>
+<body class="freelancers-page">
+    
+    <div>
+        <h1>Job Details</h1>
+        <br>
+        <h3>{{job.title}}</h3>
+        <br>
+        <h5>Description:</h5>
+        <p>{{job.description}}</p>
+        <br>
+        <h5>Category:</h5>
+        <p>{{job.get_category_display}}</p>
+        <br>
+        <h5>Rate:</h5>
+        <p>${{job.price}}</p>
+        <br>
+        <h5>Location:</h5>
+        <p>{{ job.get_location_display }}</p>
+    </div>
+    
+</body>
 
 {% endblock %}

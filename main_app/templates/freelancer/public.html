@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<body class="freelancers-page">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h3 class="card-title"><strong>{{ freelancer.user.username }}'s Profile</strong></h3>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Field: {{ freelancer.get_type_fl_display }}</p>
+          <p>Base Rate: ${{  freelancer.hourly_rate }} </p>
+          <p>Skills: {{ freelancer.skills }}</p>
+          <p>Contact: {{ freelancer.user.email }}</p>
+          <a href="{{ freelancer.portfolio_link }}" class="card-link">{{ freelancer.portfolio_link }}</a>
+        </div>
+      </div>
+</body>
 
-<h1>{{ freelancer.user.username }}'s Profile</h1>
-<p>Field: {{ freelancer.get_type_fl_display }}</p>
-<p>Base Rate: ${{  freelancer.hourly_rate }} </p>
-<p>Skills: {{ freelancer.skills }}</p>
-<p>Portfolio: <a href="{{ freelancer.portfolio_link }}">{{ freelancer.portfolio_link }}</a></p>
 
 
 {% endblock %}
