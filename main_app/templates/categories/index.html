@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>{{ jobposting.title }}</h1> 
     
-<div class="container categories-index">
+
   <div class="row">
     <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
@@ -48,7 +46,7 @@
       <div class="card  bg-transparent  roundedCard">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
           <h2 class="card-title text-white subCategories-title">Email Design</h2>
-          <a href="{% url 'subCategories' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'all_freelancers' %}" class="subCategories-link">Hire a Talent</a>
           <a href="{% url 'posting_list' %}" class="subCategories-link">Open Vacancies</a>
         </div>
       </div>
@@ -57,7 +55,7 @@
       <div class="card  bg-transparent  roundedCard">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
           <h2 class="card-title text-white subCategories-title">Infographics Design</h2>
-          <a href="{% url 'subCategories' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'all_freelancers' %}" class="subCategories-link">Hire a Talent</a>
           <a href="{% url 'posting_list' %}" class="subCategories-link">Open Vacancies</a>
         </div>
       </div>
@@ -69,7 +67,7 @@
       <div class="card  bg-transparent  roundedCard">
         <div class="card-body text-center d-flex flex-column justify-content-center">
           <h2 class="card-title text-white subCategories-title">Branding and Identity Design</h2>
-          <a href="{% url 'subCategories' %}" class="subCategories-link">Hire a Talent</a>
+          <a href="{% url 'all_freelancers' %}" class="subCategories-link">Hire a Talent</a>
           <a href="{% url 'posting_list' %}" class="subCategories-link">Open Vacancies</a>
         </div>
       </div>
