@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Delete Freelancer</h1>
+<body class="freelancers-page">
+    
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            Delete Freelancer
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Are you sure you want to delete {{ object.name }}?</li>
+          <li class="list-group-item"><form action="" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Yes - Delete!" class="btn">
+            <a href="{% url 'home' %}" class="cancel">Cancel</a>
+          </form></li>
+        </ul>
+      </div>
 
-  <h4>Are you sure you want to delete <span class="teal-text">{{ object.name }}</span>?</h4>
 
-  <form action="" method="POST">
-    {% csrf_token %}
-    <input type="submit" value="Yes - Delete!" class="btn">
-    <a href="{% url 'home' %}">Cancel</a>
-  </form>
+</body>
 {% endblock %}

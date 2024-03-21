@@ -362,3 +362,7 @@ def all_freelancers(request):
         'freelancers': freelancers
     }
     return render(request, 'freelancer/all_freelancers.html', context)
+
+def freelancer_public(request, freelancer_id):
+    freelancer = FreelancerProfile.objects.get(id=freelancer_id)
+    return render(request, 'freelancer/public.html', {'freelancer': freelancer})
