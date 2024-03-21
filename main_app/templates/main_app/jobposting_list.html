@@ -2,25 +2,32 @@
 {% block content %}
 <body class="freelancers-page">
 
-   <h1>Job Search</h1>
-   <form action="{% url 'job_search' %}" method="GET">
-      <input type="text" name="q" placeholder="Search For Job">
-      <button type="submit">Search</button>
-   </form>
 
-<section class="popular-services">
-   <div class="container-fluid">
-      <h2 class="section-title popular-title">All Job Postings</h2>
-      <div class="row">
+
+   
+   <section class="popular-services">
+      <div class="container-fluid">
+         <div class="row-search">
+            <div class="title-container">
+               <h2 class="section-title popular-title">All Job Postings</h2>
+            </div>
+               <form class="search-form" action="{% url 'job_search' %}" method="GET">
+                  <input type="text" name="q" placeholder="Search For Job">
+                  <button type="submit">Search</button>
+               </form>
+            </div>
+            
+         
+         <div class="row">
 
 {% for jobposting in jobpostings %}
 
 <div class="col-md-3">
    <a href="{% url 'posting_detail' jobposting.id %}">
    <div class="card popular-card">
-      <img class="card-img-top" src="https://picsum.photos/2/2" alt="Card image cap">
       <div class="card-body">
        <h6 class="card-title why-card-title"> {{ jobposting.title }}</h6>
+       <h6 class="card-title why-card-title">Reward: ${{ jobposting.price }}</h6>
        <div>
       </div>
      </div>

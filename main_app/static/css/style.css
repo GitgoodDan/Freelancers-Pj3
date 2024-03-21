@@ -529,3 +529,17 @@ font-weight: bold;
 .signUpForm ul{
     display: none;
 }
+
+.row-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+.title-container {
+    order: 1;
+ }
+
+ .search-form {
+    order: 2;
+ }
