@@ -84,7 +84,7 @@
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="https://picsum.photos/10/10" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Added by <strong>{{ freelancer.user.username }}</strong></h5>
+                            <h5 class="card-title">Added by <strong><a href="{% url 'freelancer_pub' freelancer.id %}">{{ freelancer.user.username }}</a></strong></a></h5>
                             <p class="card-text">Type: <strong>{{ freelancer.get_type_fl_display }}</strong></p>
                             <p class="card-text">Skills: <strong>{{ freelancer.skills }}</strong></p>
                             <a href="{{ freelancer.portfolio_link }}" class="btn btn-primary">Portfolio</a>

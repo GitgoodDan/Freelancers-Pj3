@@ -60,10 +60,6 @@ def profile_client(request, client_id):
   return render(request, 'profile/client.html', {'client': client})
 
 
-# def profile_freelancer(request, freelancer_id):
-#   freelancer = FreelancerProfile.objects.get(id=freelancer_id)
-#   return render(request, 'profile/freelancer.html', {'freelancer': freelancer})
-
 class ClientUpdate(UpdateView):
    model = ClientProfile
    fields = ['address', 'company', 'phone_number']
@@ -241,3 +237,7 @@ def all_freelancers(request):
         'freelancers': freelancers
     }
     return render(request, 'freelancer/all_freelancers.html', context)
+
+def freelancer_public(request, freelancer_id):
+    freelancer = FreelancerProfile.objects.get(id=freelancer_id)
+    return render(request, 'freelancer/public.html', {'freelancer': freelancer})
