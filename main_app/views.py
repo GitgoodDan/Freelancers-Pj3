@@ -9,6 +9,7 @@ from .forms import ClientSignUpForm, FreelancerSignUpForm
 from .models import JobPosting, ClientProfile, FreelancerProfile, User
 from django.db.models import Q
 from django.contrib import messages
+from django.urls import reverse_lazy
 
 # Create your views here.
 def home(request):
@@ -220,8 +221,14 @@ class JobCreate(LoginRequiredMixin, CreateView):
      return redirect('/')
 
 class JobUpdate(LoginRequiredMixin, UpdateView):
-  model = JobPosting
-  fields = ['title', 'description', 'price', 'category', 'location']
+    model = JobPosting
+    fields = ['title', 'description', 'price', 'category', 'location', 'timeframe']
+    template_name_suffix = '_form'
+
+    def get_success_url(self):
+        # Redirect to the client's profile page
+        client_id = self.object.client.clientprofile.id
+        return reverse_lazy('prof_client', kwargs={'client_id': client_id})
 
 class JobDelete(LoginRequiredMixin, DeleteView):
   model = JobPosting

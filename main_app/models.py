@@ -127,4 +127,7 @@ class JobPosting(models.Model):
         choices=TIMEFRAME_OPTIONS, 
         max_length=24,
         default=JOB_CATEGORIES[0][0])
+    
+    def get_absolute_url(self):
+        return reverse('prof_client', kwargs={'client_id': self.id})
 
