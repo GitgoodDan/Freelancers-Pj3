@@ -8,9 +8,9 @@
 
 # Screenshot
 
-<img src="https://ibb.co/SX8D3Hk">
-<img src="https://ibb.co/4N0WCKC">
-<img src="https://ibb.co/g3LZ09s">
+<img src="https://i.ibb.co/xS0K7wn/Screenshot-2024-03-21-at-6-50-52-PM.png">
+<img src="https://i.ibb.co/JkSn8m8/Screenshot-2024-03-21-at-6-51-13-PM.png">
+<img src="https://i.ibb.co/hyJFG9p/Screenshot-2024-03-21-at-6-51-30-PM.png">
 
 # Technologies Used
 
