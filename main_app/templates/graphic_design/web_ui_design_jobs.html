@@ -5,10 +5,10 @@
 
 <section class="popular-services">
    <div class="container-fluid">
-     <h2 class="section-title popular-title">Pay-Per-Click Advertising Jobs</h2>
+     <h2 class="section-title popular-title">Web U/I Design Jobs</h2>
      <div class="row">
 
-{% for jobposting in jobpostings_DM3 %}
+{% for jobposting in jobpostings_GD2 %}
 
 <div class="col-md-3">
    <a href="{% url 'posting_detail' jobposting.id %}">
@@ -23,7 +23,6 @@
  </a>
  </a>
  </div><!--/col-->
- 
  
  {% endfor %}
 

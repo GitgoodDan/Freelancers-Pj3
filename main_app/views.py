@@ -20,6 +20,12 @@ def about(request):
 def categories(request):
   return render(request, 'categories/index.html')
 
+# def job_subcategory(request, subcategory_id):
+#   subcategory = JobPosting.objects.get(category=subcategory_id)
+#   return render(request, 'jobposting/subcategory.html', {'subcategory': subcategory})
+def subCategories(request):
+  return render(request, 'categories/subCategories.html')
+
 def graphic_design_index(request):
    return render(request, 'categories/graphic_design.html')
 
@@ -27,9 +33,9 @@ def logo_design_jobs(request):
    jobpostings_GD1 = JobPosting.objects.filter(category = 'logo_design').values()
    return render(request, 'graphic_design/logo_design_jobs.html', {'jobpostings_GD1': jobpostings_GD1})
 
-def web_ui_jobs(request):
+def web_ui_design_jobs(request):
    jobpostings_GD2 = JobPosting.objects.filter(category = 'web_ui_design').values()
-   return render(request, 'graphic_design/web_ui_jobs.html', {'jobpostings_GD2': jobpostings_GD2})
+   return render(request, 'graphic_design/web_ui_design_jobs.html', {'jobpostings_GD2': jobpostings_GD2})
 
 def mobile_ui_design_jobs(request):
    jobpostings_GD3 = JobPosting.objects.filter(category = 'mobile_ui_design').values()
@@ -122,7 +128,7 @@ def andriod_app_development_jobs(request):
 
 def cross_platform_app_development_jobs(request):
     jobpostings_MAD3 = JobPosting.objects.filter(category = 'cross_platform_app_development').values()
-    return render(request, 'mobile_app_dev/cross_platform_app_development_jobs', {'jobpostings_MAD3': jobpostings_MAD3})
+    return render(request, 'mobile_app_dev/cross_platform_app_development_jobs.html', {'jobpostings_MAD3': jobpostings_MAD3})
 
 def mobile_game_development_jobs(request):
     jobpostings_MAD4 = JobPosting.objects.filter(category = 'mobile_game_development').values()
@@ -155,9 +161,9 @@ def security_auditing_jobs(request):
    jobpostings_CS4 = JobPosting.objects.filter(category = 'security_auditing').values()
    return render(request, 'cybersecurity/security_auditing_jobs.html', {'jobpostings_CS4': jobpostings_CS4})
 
-def data_encription_jobs(request):
-   jobpostings_CS5 = JobPosting.objects.filter(category = 'data_encription').values()
-   return render(request, 'cybersecurity/data_encription_jobs.html', {'jobpostings_CS5': jobpostings_CS5})
+def data_encryption_jobs(request):
+   jobpostings_CS5 = JobPosting.objects.filter(category = 'data_encryption').values()
+   return render(request, 'cybersecurity/data_encryption_jobs.html', {'jobpostings_CS5': jobpostings_CS5})
 
 def incident_response_jobs(request):
    jobpostings_CS6 = JobPosting.objects.filter(category = 'incident_response').values()
@@ -179,11 +185,6 @@ def reg_freelancer(request):
 def profile_client(request, client_id):
   client = ClientProfile.objects.get(id=client_id)
   return render(request, 'profile/client.html', {'client': client})
-
-
-# def profile_freelancer(request, freelancer_id):
-#   freelancer = FreelancerProfile.objects.get(id=freelancer_id)
-#   return render(request, 'profile/freelancer.html', {'freelancer': freelancer})
 
 class ClientUpdate(UpdateView):
    model = ClientProfile
