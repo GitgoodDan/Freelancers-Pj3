@@ -221,14 +221,18 @@ class JobCreate(LoginRequiredMixin, CreateView):
      return redirect('/')
 
 class JobUpdate(LoginRequiredMixin, UpdateView):
-  model = JobPosting
-  fields = ['title', 'description', 'price', 'category', 'location', 'timeframe']
-  template_name_suffix = '_form'
+    model = JobPosting
+    fields = ['title', 'description', 'price', 'category', 'location', 'timeframe']
+    template_name_suffix = '_form'
+
+    def get_success_url(self):
+        # Redirect to the client's profile page
+        client_id = self.object.client.clientprofile.id
+        return reverse_lazy('prof_client', kwargs={'client_id': client_id})
 
 class JobDelete(LoginRequiredMixin, DeleteView):
   model = JobPosting
-  def get_success_url(self):
-        return reverse_lazy('prof_client', kwargs={'client_id': self.object.client.id})
+  success_url = '/'
 
 class JobList(ListView):
   model = JobPosting
