@@ -108,6 +108,15 @@ class JobPosting(models.Model):
         choices=JOB_LOCATIONS, 
         max_length=16,
         default=JOB_LOCATIONS[0][0])
+    TIMEFRAME_OPTIONS = [
+        ('1to3months', '1 - 3 Months'),
+        ('3to6months', '3 - 6 Months'),
+        ('morethan6months', 'More than 6 months')
+    ]
+    timeframe = models.CharField(
+        choices=TIMEFRAME_OPTIONS, 
+        max_length=24,
+        default=JOB_CATEGORIES[0][0])
 
     TIMEFRAME_OPTIONS = [
         ('1to3months', '1 - 3 Months'),
