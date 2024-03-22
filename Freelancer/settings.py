@@ -127,3 +127,5 @@ LOGOUT_REDIRECT_URL = '/'  # Redirect to the home page after logout
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+import django_heroku
+django_heroku.settings(locals())

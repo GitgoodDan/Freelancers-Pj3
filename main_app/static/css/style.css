@@ -29,6 +29,14 @@ body.freelancers-page{
   a:hover{
     color: #a669e2;
   }
+}
+.profile {
+    color: #a669e2;
+}
+
+.profile:hover {
+    color: black;
+}
   #myVideo {
     position: fixed;
     right: 0;
@@ -38,6 +46,7 @@ body.freelancers-page{
     opacity: 0.9;
     z-index: -1; 
   }
+
 .overlay{
     position: absolute;
     top: 0;
@@ -143,6 +152,7 @@ footer a:hover{
     width: 50%;
     height: 50%;
 }
+
 .popular-card:hover{
     box-shadow: 0 10px 18px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
 }
@@ -207,20 +217,11 @@ footer a:hover{
 }
 .clientBtn{
     background-color: #a669e2;
-}
+
 /* /Join Section */
 
 
 /*categories*/
-/*categories-index*/
-
-
-/* .categories-index .row .col{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-} */
 .roundedCard{
     background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
@@ -279,6 +280,9 @@ footer a:hover{
 .freelancer-card div label {
     font-weight: bold;
 }
+.freelancer-card div label{
+font-weight: bold;
+}
 
 .freelancer-card{
     background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
@@ -288,6 +292,7 @@ footer a:hover{
     margin-left: 30px;
     width: 200px;
 }
+
 .freelancer-card h6{
     border-bottom: 1px gray solid;
 }
@@ -362,6 +367,7 @@ footer a:hover{
 .log-form button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
 .create-account{
     padding-top: 20px;
     text-align: center;
@@ -441,6 +447,7 @@ footer a:hover{
 .signUpForm tbody td{
     padding: 10px;
 }
+
 .signUpForm select{
     background-color: transparent;
     border: #a669e2 1px solid;
@@ -469,6 +476,16 @@ footer a:hover{
 .signUpForm span{
     color: lightgray;
     display: none;
+}
+
+.signUpForm textarea {
+    background-color: transparent;
+    border: #a669e2 1px solid;
+    border-radius: 5px;
+}
+
+.signUpForm th {
+    margin-left: 16px;
 }
 .signUpForm ul{
     display: none;

@@ -13,11 +13,13 @@
   {% endif %}
   <br>
   <form class="signUpForm" action="" method="POST">
+
     {% csrf_token %}
     <table class="signUpForm">
       {{ form.as_table }}
     </table>
     <input style="margin-left: 25%; margin-top: 15px;" class=" jobPost-searchBtn" type="submit" value="Submit!" class="btn">
+
   </form>
 </div><!--/col-->
 
