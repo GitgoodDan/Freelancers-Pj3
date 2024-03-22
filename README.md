@@ -8,8 +8,9 @@
 
 # Screenshot
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+<img src="https://i.ibb.co/xS0K7wn/Screenshot-2024-03-21-at-6-50-52-PM.png">
+<img src="https://i.ibb.co/JkSn8m8/Screenshot-2024-03-21-at-6-51-13-PM.png">
+<img src="https://i.ibb.co/hyJFG9p/Screenshot-2024-03-21-at-6-51-30-PM.png">
 
 # Technologies Used
 
@@ -22,7 +23,9 @@
 # Getting Started
 
 [Click to View Project Planning](https://trello.com/b/i8ryYQUm/projrct-3)
-[Click to Play Connect Four!](your deployment url here)
+<br>
+<br>
+[Click to Launch Freelancer!](https://freelancer-1-af9ba9d1a80b.herokuapp.com/)
 
 # Next Steps
 

@@ -1,101 +1,100 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h2 class="section-title popular-title m-5">Mobile App Development Categories</h2>
+<div class="container">
+  <div class="row">
 
-   <div class="container-fluid">
-     <h2 class="section-title popular-title">Mobile App Development Categories</h2>
-     <div class="row">
-
-      <div class="col-md-4 mb-4">
-        <div class="card roundedCard bg-transparent">
-          <div class="card-body text-center  d-flex flex-column justify-content-center">
-            <h2 class="card-title text-white subCategories-title">iOS App Development</h2>
-       <div>
-
-         <a href="{% url 'ios_app_development_jobs' %}">Jobs</a> |
-         <a href="{% url 'all_freelancers' %}">Freelancers</a>
-
-      </div>
-     </div>
-   </div>
- </a>
- </div><!--/col-->
-
-  <div class="col-md-4 mb-4">
+    <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">Android App Development</h2>
-       <div>
+          <h3 class="card-title text-white subCategories-title">iOS App Development</h3>
+          <div>
 
-         <a href="{% url 'andriod_app_development_jobs' %}">Jobs</a> |
-         <a href="{% url 'all_freelancers' %}">Freelancers</a>
+            <a href="{% url 'ios_app_development_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
 
-      </div>
-     </div>
-   </div>
- </a>
- </div><!--/col-->
- 
-   <div class="col-md-4 mb-4">
-      <div class="card roundedCard bg-transparent">
-        <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">Cross-Platform App Development</h2>
-       <div>
-
-         <a href="{% url 'cross_platform_app_development_jobs' %}">Jobs</a> |
-         <a href="{% url 'all_freelancers' %}">Freelancers</a>
-
+          </div>
         </div>
       </div>
-    </div>
-  </a>
-</div><!--/col-->
+      </a>
+    </div><!--/col-->
 
-  <div class="col-md-4 mb-4">
+    <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">Mobile Game Development</h2>
-      <div>
+          <h3 class="card-title text-white subCategories-title">Android App Development</h3>
+          <div>
 
-        <a href="{% url 'mobile_game_development_jobs' %}">Jobs</a> |
-        <a href="{% url 'all_freelancers' %}">Freelancers</a>
+            <a href="{% url 'andriod_app_development_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
 
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</a>
-</div><!--/col-->
+      </a>
+    </div><!--/col-->
 
-  <div class="col-md-4 mb-4">
+    <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">App Testing and Quality Assurance</h2>
-      <div>
+          <h3 class="card-title text-white subCategories-title">Cross-Platform App Development</h3>
+          <div>
 
-        <a href="{% url 'app_testing_and_quality_assurance_jobs' %}">Jobs</a> |
-        <a href="{% url 'all_freelancers' %}">Freelancers</a>
+            <a href="{% url 'cross_platform_app_development_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
 
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</a>
-</div><!--/col-->
+      </a>
+    </div><!--/col-->
 
-  <div class="col-md-4 mb-4">
+    <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">App Maintenance and Updates</h2>
-      <div>
+          <h3 class="card-title text-white subCategories-title">Mobile Game Development</h3>
+          <div>
 
-        <a href="{% url 'app_maintenance_and_updates_jobs' %}">Jobs</a> |
-        <a href="{% url 'all_freelancers' %}">Freelancers</a>
+            <a href="{% url 'mobile_game_development_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
 
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</a>
-</div><!--/col-->
+      </a>
+    </div><!--/col-->
 
+    <div class="col-md-4 mb-4">
+      <div class="card roundedCard bg-transparent">
+        <div class="card-body text-center  d-flex flex-column justify-content-center">
+          <h3 class="card-title text-white subCategories-title">App Testing and Quality Assurance</h3>
+          <div>
+
+            <a href="{% url 'app_testing_and_quality_assurance_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
+
+          </div>
+        </div>
+      </div>
+      </a>
+    </div><!--/col-->
+
+    <div class="col-md-4 mb-4">
+      <div class="card roundedCard bg-transparent">
+        <div class="card-body text-center  d-flex flex-column justify-content-center">
+          <h3 class="card-title text-white subCategories-title">App Maintenance and Updates</h3>
+          <div>
+
+            <a href="{% url 'app_maintenance_and_updates_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
+
+          </div>
+        </div>
+      </div>
+      </a>
+    </div><!--/col-->
+  </div>
 </div>
 </div>
 

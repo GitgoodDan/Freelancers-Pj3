@@ -1,24 +1,28 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-
 <body class="freelancers-page">
-
+  <div class="container-fluid " >
+    <hr style="background-color: rgba(201, 154, 220, 0.6);">
+    <div class="row">
+    <div class="col">
   {% if object %}
-    <h1>Edit</h1>
+  <h1 class="m-5" style="text-align: left;">Edit</h1>
   {% else %}
-    <h1>Post Job</h1>
+  <h1 style="color:white; margin-left: 35%; text-align: left;" class="m-2">Post Job</h1>
   {% endif %}
-  
-  
-  <form action="" method="POST">
+  <br>
+  <form class="signUpForm" action="" method="POST">
     {% csrf_token %}
-    <table>
+    <table class="signUpForm">
       {{ form.as_table }}
     </table>
-    <input type="submit" value="Submit!" class="btn">
+    <input style="margin-left: 25%; margin-top: 15px;" class=" jobPost-searchBtn" type="submit" value="Submit!" class="btn">
   </form>
+</div><!--/col-->
+
+</div><!--/row-->
+</div><!--/container-->
 
 </body>
 

@@ -43,7 +43,7 @@
           {% endif %}
           <a class="dropdown-item" href="#"><form action="{% url 'logout' %}" method="post">
           {% csrf_token %}
-        <button type="submit" class="nav-link" style="background: none; border: none;">Log Out</button>
+        <button type="submit" class="nav-link" style="background: none; border: none; padding-left: 0;">Log Out</button>
       </form>
         </a>
         </div>
@@ -92,9 +92,9 @@
         <section class="">
           <div class="row">
             <!-- First Column -->
-            <div class="col-lg-4">
+            <div class="col-lg-6">
               <form action="">
-                <div class="row d-flex justify-content-center">
+                <div class="row" style="margin-left: 20px;">
                   <p><strong>Sign up for our newsletter</strong></p>
                   <div class="col-auto">
                     <div data-mdb-input-init class="form-outline mb-4">
@@ -107,24 +107,24 @@
             </div><!-- /First Column -->
         
             <!-- Second Column -->
-            <div class="col-lg-4">
-              <h5 class="text-uppercase">Categories</h5>
-              <ul class="list-unstyled mb-0">
-                <li><a href="{% url 'graphic_design' %}" class="text-white">Graphic Design</a></li>
-                <li><a href="{% url 'web_dev' %}" class="text-white">Web Development</a> </li>
-                <li><a href="{% url 'digital_marketing' %}" class="text-white">Digital Marketing</a> </li>
-                <li><a href="{% url 'mobile_app_dev' %}" class="text-white">Mobile App Development</a></li>
-                <li><a href="{% url 'cybersecurity' %}" class="text-white">Cybersecurity</a></li>
+            <div class="col-lg-2">
+              <h5 class="text-uppercase" style="text-align: left; padding-bottom: 7px;">Categories</h5>
+              <ul class="list-unstyled mb-0" style="text-align: left;">
+                <li style="line-height: 40px;"><a href="{% url 'graphic_design' %}" class="text-white">Graphic Design</a></li>
+                <li style="line-height: 40px;"><a href="{% url 'web_dev' %}" class="text-white">Web Development</a> </li>
+                <li style="line-height: 40px;"><a href="{% url 'digital_marketing' %}" class="text-white">Digital Marketing</a> </li>
+                <li style="line-height: 40px;"><a href="{% url 'mobile_app_dev' %}" class="text-white">Mobile App Development</a></li>
+                <li style="line-height: 40px;"><a href="{% url 'cybersecurity' %}" class="text-white">Cybersecurity</a></li>
               </ul>
             </div><!-- /Second Column -->
         
             <!-- Third Column -->
-            <div class="col-lg-4">
-              <h5 class="text-uppercase">Company</h5>
-              <ul class="list-unstyled mb-0">
-                <li><a href="{% url 'about' %}" class="text-white">About</a></li>
-                <li><a href="#!" class="text-white">Our Mission</a></li>
-                <li><a href="#!" class="text-white">Terms of Use</a></li>
+            <div class="col-lg-2">
+              <h5 class="text-uppercase" style="text-align: left; padding-bottom: 7px;">Company</h5>
+              <ul class="list-unstyled mb-0" style="text-align: left;">
+                <li style="line-height: 40px;"><a href="{% url 'about' %}" class="text-white">About</a></li>
+                <li style="line-height: 40px;"><a href="#!" class="text-white">Our Mission</a></li>
+                <li style="line-height: 40px;"><a href="#!" class="text-white">Terms of Use</a></li>
               </ul>
             </div><!-- /Third Column -->
           </div><!-- /row -->
@@ -134,27 +134,20 @@
         <hr class="mb-4" />
 
         <!-- Section: Social media -->
-        <div class="row d-flex justify-content-center">
+        <!-- <div class="row d-flex justify-content-center">
           <section class="mb-4 text-center">
-          <!-- Facebook -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-              class="fab fa-facebook-f"></i></a>
-          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-          <!-- Google -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-          <!-- Instagram -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-          <!-- Linkedin -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
               class="fab fa-linkedin-in"></i></a>
-          <!-- Github -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
         </section>
-      </div>
+      </div> -->
         <!-- Section: Social media -->
       </div>
-
+<hr style="background-color: white; width: 95%;">
       <!-- Copyright -->
       <div class="row d-flex justify-content-center">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">

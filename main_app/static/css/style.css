@@ -20,6 +20,7 @@ body.freelancers-page{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    position: relative;
   }
   a{
     text-decoration: none;
@@ -44,7 +45,7 @@ body.freelancers-page{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 1;
+    z-index: -1;
     pointer-events: none;
 }
 
@@ -58,7 +59,6 @@ body.freelancers-page{
     transition: background-color 0.3s, color 0.3s;
     /* Smooth transition on hover */
 }
-
 
 .nav-item {
     font-size: 14px;
@@ -74,12 +74,24 @@ body.freelancers-page{
 .navbar-toggler{
     color: white;
     border: #a669e2 1px solid;
+    background-color: #fff;
+    
 }
+
+.navbar-nav li .dropdown-menu {
+    padding: 5px;
+    min-width: 0;
+}
+
 footer {
     margin-top: 50px;
     padding-top: 50px;
     background-color: rgba(0, 0, 0, 0.9); 
     
+}
+footer a:hover{
+    text-decoration: none;
+    color: #6a0dad;
 }
 
 /* Home UI */
@@ -134,8 +146,6 @@ footer {
 .popular-card:hover{
     box-shadow: 0 10px 18px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
 }
-
-
 /* .card {
     margin-bottom: 30px;
     border: none;
@@ -162,6 +172,11 @@ footer {
     margin-left: 0;
     color: rgb(0, 0, 0);
     margin-bottom: 10%;
+}
+.why-img{
+    width: 60%;
+    height: 60%;
+    margin-left: 35px;
 }
 .reasons-list li {
     list-style-type: none;
@@ -209,8 +224,8 @@ footer {
 .roundedCard{
     background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
-    width: 350px; 
-    height: 350px; 
+    width: 300px;
+    height: 300px; 
     background-color: #ffffff;
     border-radius: 50%; 
     border: 1px solid #6a0dad; 
@@ -250,19 +265,21 @@ footer {
     border: #a669e2 1px solid;
     color: white;
 }
+
 .filtersLink{
     font-size: 14px;
     color: white;
     padding: 8px;
     border-radius: 1px;
 }
+
 .freelancer-card{
     margin: 10px;
+}
+.freelancer-card div label {
+    font-weight: bold;
+}
 
-}
-.freelancer-card div label{
-font-weight: bold;
-}
 .freelancer-card{
     background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
@@ -299,7 +316,6 @@ font-weight: bold;
 .registration-card:hover{
     box-shadow: 0 10px 18px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
 }
-
 /* login */
 .log-container h3{
     margin-top: 40px;
@@ -351,9 +367,9 @@ font-weight: bold;
     text-align: center;
 }
 .create-account a {
-    display: inline; 
-    color:#a669e2;
-  }
+    display: inline;
+    color: #a669e2;
+}
 .signupContainer{
     color: white;
     margin: 20px;
@@ -422,6 +438,9 @@ font-weight: bold;
     border-radius: 5px;
     color: white;
 }
+.signUpForm tbody td{
+    padding: 10px;
+}
 .signUpForm select{
     background-color: transparent;
     border: #a669e2 1px solid;
@@ -457,8 +476,8 @@ font-weight: bold;
 
 /*client/freelancer profile */
 .profile-container{
-    margin-top: 30px;
-    margin-bottom: 200px;
+    margin-top: 70px;
+    margin-bottom: 20px;
     padding: 20px;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
 }
@@ -544,4 +563,71 @@ margin-top: 22px;
 .delete-profile{
     margin: 20px;
     border: none;
+}
+.client-profile-header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.new-jobBtn{
+    border: #a669e2 1px solid;
+    border-radius: 5px;
+}
+.new-jobBtn:hover{
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+    color: black;
+}
+.profile-subcontainer{
+    background-color: transparent;
+}
+.profile-subcontainer h3{
+    color: white;
+}
+.profile-subcontainerCard{
+    background: transparent;
+    padding: 20px;
+}
+
+.subProfile-list {
+    color: black;
+    padding: 20px;
+    margin: 3px;
+    border: #a669e2;
+}
+.profile-list li{
+    font-size: 17px;
+    padding: 30px;
+}
+.subProfile-list li{
+    margin: 10px;
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.4);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+}
+.jobPost-search {
+    display: inline;
+    background: rgba(243, 243, 243, 0.1);
+    border:rgba(201, 154, 220, 0.6) 1px solid;
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+    width: 250px;
+}
+.jobPost-searchBtn {
+    display: inline;
+    background: rgba(243, 243, 243, 0.1);
+    border:rgba(201, 154, 220, 0.6) 1px solid;
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+}
+.jobPost-searchBtn:hover{
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+}
+.jobPost-search:hover{
+    background-color: #fff;
+    color: black;
+    transition: width 0.3s ease-in-out;
+    width: 300px; 
 }

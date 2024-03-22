@@ -73,10 +73,10 @@
             <div class="row">
                 {% for freelancer in freelancers %}
                     <div class="card freelancer-card">
-                    <a href="{% url 'freelancer_pub' freelancer_id=freelancer.id %}">
+                    <a href="{% url 'freelancer_pub' freelancer_id=freelancer.id %}" style="text-decoration: none;">
                      <img class="card-img-top" src="https://picsum.photos/2/2" alt="Card image cap">
                       <div class="card-body ">
-                        <h6 class="card-title">Added by <strong>{{ freelancer.user.username }}</strong></h6>
+                        <h6 class="card-title">Freelancer: <strong>{{ freelancer.user.username }}</strong></h6>
                         <p class="card-text ">Title: <strong>{{ freelancer.get_type_fl_display }}</strong></p>
                         <p class="card-text">Skills: <strong>{{ freelancer.skills }}</strong></p></div>
                       <div class="card-footer">

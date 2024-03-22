@@ -7,8 +7,8 @@
   <div class="container">
     <h1 class="display-4">Find Your Expert</h1>
     <p class="lead">Hire top talent for your projects</p>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form action="{% url 'freelancer_search' %}" method="GET" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
       <button class="btn hero-btn my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
@@ -57,7 +57,7 @@
       <div class="col-md-3">
         <a href="{% url 'cybersecurity' %}">
           <div class="card popular-card">
-            <img src="../static/image/tec.png" class="card-img-top" alt="...">
+            <img src="../static/image/cyber.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="card-title why-card-title">Cybersecurity</h6>
             </div>
@@ -88,7 +88,7 @@
                 </ul>
        </div> <!--/col-->
       <div class="col-md-4">
-        <img src="../static/image/Q.png" class="img-fluid" alt="Join Freelancer">
+        <img src="../static/image/Q.png" class="img-fluid why-img" alt="Join Freelancer">
       </div>
     </div>
   </div>
@@ -98,10 +98,10 @@
 <section class="join-section">
     <h2 class="section-title join-title ">Join Freelancer Today</h2>
     <div class="btn-group" role="group" aria-label="Join buttons">
-      <a href="{% url 'register' %}">
+      <a href="{% url 'client_signup' %}">
       <button type="button" class=" clientBtn" >For Clients </button>
       </a>
-      <a href="{% url 'register' %}">
+      <a href="{% url 'freelancer_signup' %}">
         <button type="button">For Freelancers</button>
         </a>
   </div>
