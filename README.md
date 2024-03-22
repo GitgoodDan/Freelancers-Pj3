@@ -16,6 +16,7 @@
 
 -   Python
 -   Django
+-   PostgreSQL
 -   HTML
 -   CSS
 -   Bootstrap
