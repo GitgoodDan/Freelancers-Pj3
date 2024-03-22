@@ -1,22 +1,41 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelancer</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--Font Awesome icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
 
-{% block content %}
 <body class="freelancers-page">
-    
-    <div class="card" style="width: 18rem;">
-        <div class="card-header">
-            Delete Freelancer
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Are you sure you want to delete {{ object.name }}?</li>
-          <li class="list-group-item"><form action="" method="POST">
-            {% csrf_token %}
-            <input type="submit" value="Yes - Delete!" class="btn">
-            <a href="{% url 'home' %}" class="cancel">Cancel</a>
-          </form></li>
+  <div class="overlay"></div>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/"><span>F</span>reelancer</a>
+  </nav>
+
+  <body class="freelancers-page">
+    <div class=" card delete-profile-container">
+      <div class="card container delete-profile-card">
+        <h3 class="delete-profile">Delete Profile </h3>
+        <ul class="list-group list-group-flush delete-list">
+          <li class="list-group-item">Are you sure you want to delete{{ object.name }}?</li>
+          <li class="list-group-item">
+            <form action="" method="POST">
+              {% csrf_token %}
+              <input type="submit" value="Yes - Delete!" class="btn">
+              <a href="{% url 'home' %}" class="cancel">Cancel</a>
+            </form>
+          </li>
         </ul>
       </div>
+    </div>
 
+  </body>
 
-</body>
-{% endblock %}
+</html>

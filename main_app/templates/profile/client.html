@@ -1,25 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <body class="freelancers-page">
 
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-            <h1>{{ client.user.username }}'s Profile</h1>
-        </div>
+  <div class="container-fluid card profile-card">
+    <h1><strong>{{ client.user.username }}'</strong>s Profile</h1>
+    <div class="row">
+      <div class="col">
+        <img class="card-img-top" src="https://picsum.photos/2/2" alt="Card image cap" width="10px" height="30px">
+
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Company: {{  client.company }}</li>
+          <li class="list-group-item">Company: {{ client.company }}</li>
           <li class="list-group-item">Address: {{ client.address }}</li>
           <li class="list-group-item">Phone: {{ client.phone_number }}</li>
           <li class="list-group-item">Email: {{ client.user.email }}</li>
           <div class="card-footer">
             <div class="card-action-edits">
-                <a href="{% url 'client_update' client.id %}">Edit</a>
-                <a href="{% url 'client_delete' client.id %}">Delete</a>
-              </div>
+              <a href="{% url 'client_update' client.id %}">Edit</a>
+              <a href="{% url 'client_delete' client.id %}">Delete</a>
+            </div>
           </div>
         </ul>
-      </div>
+      </div><!--/left col-->
 
+      <div class="col-md-3">
+        <h1>2nd col</h1>
+      </div><!--/right col-->
+
+    </div>
+  </div>
 </body>
 
 

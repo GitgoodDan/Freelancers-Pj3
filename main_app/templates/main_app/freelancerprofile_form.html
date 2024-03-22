@@ -2,23 +2,25 @@
 {% block content %}
 
 <body class="freelancers-page">
-    <div class="card" style="width: auto;">
-        <div class="card-header">
-            Edit Profile
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <form action="" method="POST">
-                {% csrf_token %}
-                <table>
-                  {{ form.as_table }}
-                </table>
-                <input type="submit" value="Submit!" class="btn">
-              </form>
-          </li>
-        </ul>
-      </div>
+  <div class="container-fluid card profile-container">
 
+    <div class="card " style="width: auto; background-color: transparent;">
+      <div class="card-header">
+        <h3>Edit Profile </h3>
+      </div>
+      <ul class="list-group list-group-flush profile-list">
+        <li class="list-group-item">
+          <form action="" method="POST" class="edit-DjangoForm">
+            {% csrf_token %}
+            <table>
+              {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit!" class="btn">
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
 </body>
 
 
