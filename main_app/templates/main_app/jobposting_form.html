@@ -4,20 +4,21 @@
 
 
 <body class="freelancers-page">
-
-  {% if object %}
-    <h1>Edit</h1>
-  {% else %}
-    <h1>Post Job</h1>
-  {% endif %}
+<br>
+{% if object %}
+<h1>Edit</h1>
+{% else %}
+<h1 style="color:white; margin-left: 35%;">Post Job</h1>
+{% endif %}
+<br>
   
   
-  <form action="" method="POST">
+  <form style="margin-left: 15%;" class="signUpForm" action="" method="POST">
     {% csrf_token %}
-    <table>
+    <table class="signUpForm">
       {{ form.as_table }}
     </table>
-    <input type="submit" value="Submit!" class="btn">
+    <input style="margin-left: 25%;" class="signUpForm" type="submit" value="Submit!" class="btn">
   </form>
 
 </body>

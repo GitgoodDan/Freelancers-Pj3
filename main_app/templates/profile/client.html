@@ -8,7 +8,6 @@
     <div class="row">
       <div class="col">
         <img class="card-img-top" src="https://picsum.photos/2/2" alt="Card image cap" width="10px" height="30px">
-
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Company: {{ client.company }}</li>
           <li class="list-group-item">Address: {{ client.address }}</li>
@@ -26,9 +25,30 @@
       <div class="col-md-3">
         <h1>2nd col</h1>
       </div><!--/right col-->
-
     </div>
   </div>
+      <div class="card mt-4">
+        <div class="card-header">
+            <h2>Jobs Posted by {{ client.user.username }}</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for job in client.user.job_postings.all %}
+            <li class="list-group-item">
+                <h4>{{ job.title }}</h4>
+                <p>{{ job.description }}</p>
+                <p>Price: ${{ job.price }}</p>
+                <p>Category: {{ job.get_category_display }}</p>
+                <p>Location: {{ job.get_location_display }}</p>
+                <p>Timeframe: {{ job.get_timeframe_display }}</p>
+                <div class="card-action-edits">
+                    <a href="{% url 'posting_update' pk=job.id %}">Edit</a>
+                    <a href="{% url 'posting_delete' pk=job.id %}">Delete</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
 </body>
 
 

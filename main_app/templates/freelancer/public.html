@@ -2,14 +2,14 @@
 {% block content %}
 
 <body class="freelancers-page">
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem; margin-left: 35%;">
         <div class="card-body">
           <h3 class="card-title"><strong>{{ freelancer.user.username }}'s Profile</strong></h3>
           <p class="card-text">Field: {{ freelancer.get_type_fl_display }}</p>
           <p>Base Rate: ${{  freelancer.hourly_rate }} </p>
           <p>Skills: {{ freelancer.skills }}</p>
           <p>Contact: {{ freelancer.user.email }}</p>
-          <a href="{{ freelancer.portfolio_link }}" class="card-link">{{ freelancer.portfolio_link }}</a>
+          <a  class="profile" href="{{ freelancer.portfolio_link }}" class="card-link">{{ freelancer.portfolio_link }}</a>
         </div>
       </div>
 </body>

@@ -7,8 +7,8 @@
   <div class="container">
     <h1 class="display-4">Find Your Expert</h1>
     <p class="lead">Hire top talent for your projects</p>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form action="{% url 'freelancer_search' %}" method="GET" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
       <button class="btn hero-btn my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
@@ -57,7 +57,7 @@
       <div class="col-md-3">
         <a href="{% url 'cybersecurity' %}">
           <div class="card popular-card">
-            <img src="../static/image/tec.png" class="card-img-top" alt="...">
+            <img src="../static/image/cyber.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="card-title why-card-title">Cybersecurity</h6>
             </div>
