@@ -1,36 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <body class="freelancers-page">
 
-   <h1>Job Search</h1>
-   <form action="{% url 'job_search' %}" method="GET">
-      <input type="text" name="q" placeholder="Search For Job">
-      <button type="submit">Search</button>
-   </form>
+   
+   <section class="popular-services">
+      <div class="container-fluid">
+         <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="section-title popular-title">All Job Postings</h2>
+            <form action="{% url 'job_search' %}" method="GET">
+               <input type="text" name="q" placeholder="Search For Job" class="jobPost-search ">
+               <button type="submit" class="jobPost-searchBtn">Search</button>
+            </form>
+         </div> <!--/row-->
+         <div class="row">
+            {% for jobposting in jobpostings %}
+            <div class="col-md-3">
+               <a href="{% url 'posting_detail' jobposting.id %}" style="text-decoration: none;">
+                  <div class="card profile-container">
+                     <div class="card-body">
+                        <h6 class="card-title why-card-title"><strong>Position:</strong> {{ jobposting.title }}</h6>
+                        <h6 class="card-title why-card-title">$ {{ jobposting.price }}/hr</h6>
 
-<section class="popular-services">
-   <div class="container-fluid">
-      <h2 class="section-title popular-title">All Job Postings</h2>
-      <div class="row">
+                        <div>
+                        </div>
+                     </div>
+                  </div>
+               </a>
+               </a>
+            </div><!--/col-->
 
-{% for jobposting in jobpostings %}
+</body>
 
-<div class="col-md-3">
-   <a href="{% url 'posting_detail' jobposting.id %}">
-   <div class="card popular-card">
-      <img class="card-img-top" src="https://picsum.photos/2/2" alt="Card image cap">
-      <div class="card-body">
-       <h6 class="card-title why-card-title"> {{ jobposting.title }}</h6>
-       <div>
-      </div>
-     </div>
-   </div>
- </a>
- </a>
- </div><!--/col-->
 
-</body>   
- 
 {% endfor %}
 
 </div>

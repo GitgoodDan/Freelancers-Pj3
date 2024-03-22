@@ -1,12 +1,9 @@
 * {
     box-sizing: border-box;
-
-
-}
-
-body.freelancers-page {
+  }
+body.freelancers-page{
     background-image: linear-gradient(900deg, #4E4376 0%, #2B5876 100%),
-        url('path_to_your_image.jpg');
+                      url('path_to_your_image.jpg');
     /* Background image size and positioning */
     background-size: cover;
     background-position: center;
@@ -15,25 +12,24 @@ body.freelancers-page {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-}
-
-body {
+    }
+  
+  body {
     margin: 0;
     font-family: Arial;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-}
-
-a{
+    position: relative;
+  }
+  a{
     text-decoration: none;
     color: white;
   }
-
-a:hover{
+  a:hover{
     color: #a669e2;
   }
-
+}
 .profile {
     color: #a669e2;
 }
@@ -41,28 +37,25 @@ a:hover{
 .profile:hover {
     color: black;
 }
-
-
-
   #myVideo {
     position: fixed;
     right: 0;
     bottom: 0;
     top: 0.1px;
-    min-width: 100%;
+    min-width: 100%; 
     opacity: 0.9;
-    z-index: -1;
-}
+    z-index: -1; 
+  }
+
 .overlay{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: -1;
+    pointer-events: none;
 }
 
 .navbar-brand {
@@ -87,18 +80,27 @@ a:hover{
 .nav-item:last-child {
     border-right: none;
 }
-
-
 .navbar-toggler{
     color: white;
     border: #a669e2 1px solid;
+    background-color: #fff;
+    
+}
+
+.navbar-nav li .dropdown-menu {
+    padding: 5px;
+    min-width: 0;
 }
 
 footer {
     margin-top: 50px;
     padding-top: 50px;
-    background-color: rgba(0, 0, 0, 0.9);
-
+    background-color: rgba(0, 0, 0, 0.9); 
+    
+}
+footer a:hover{
+    text-decoration: none;
+    color: #6a0dad;
 }
 
 /* Home UI */
@@ -108,13 +110,11 @@ footer {
     padding: 100px 0;
     border-bottom: 1px solid black;
 }
-
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 10px;
     color: white;
 }
-
 .hero p {
     font-size: 1.5rem;
 }
@@ -122,24 +122,19 @@ footer {
 .form-inline input[type="search"] {
     width: 300px;
 }
-
 .hero-btn {
     background-color: transparent;
     border: #a669e2 1px solid;
     color: lightgray;
 }
-
 /* Popular Services Section */
 .popular-services {
     margin: 40px 10%;
 }
-
 .popular-title {
     text-align: center;
     color: white;
 }
-
-
 .popular-card{
     background: radial-gradient(circle, rgba(228, 232, 236, 0.3), rgba(44, 62, 80, 0.3));
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
@@ -152,13 +147,11 @@ footer {
     align-items: center;
     flex-direction: column;
 }
-
 .popular-card img {
     padding-top: 10px;
     width: 50%;
     height: 50%;
 }
-
 
 .popular-card:hover{
     box-shadow: 0 10px 18px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
@@ -171,11 +164,9 @@ footer {
     font-size: 1rem;
     margin-bottom: 10px;
 }
-
 .card-text {
     font-size: 1rem;
 }
-
 /* Why Freelancer Section */
 .why-freelancer {
     background: radial-gradient(circle, rgba(228, 232, 236, 0.6), rgba(44, 62, 80, 0.6));
@@ -192,13 +183,16 @@ footer {
     color: rgb(0, 0, 0);
     margin-bottom: 10%;
 }
-
+.why-img{
+    width: 60%;
+    height: 60%;
+    margin-left: 35px;
+}
 .reasons-list li {
     list-style-type: none;
     font-size: 1.3rem;
     color: rgb(0, 0, 0);
 }
-
 /* /Why Freelancer Section */
 
 /* Join Section */
@@ -210,63 +204,48 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
 .join-title {
     margin-bottom: 30px;
     color: rgb(255, 255, 255);
     text-align: center;
 }
-
 .join-section button {
     width: 100%;
     font-size: larger;
-    padding: 9px 150px;
+    padding:9px 150px;
     border-radius: 0;
 }
 .clientBtn{
-  background-color: #a669e2;
-}
+    background-color: #a669e2;
 
 /* /Join Section */
 
 
 /*categories*/
-/*categories-index*/
-
-
-/* .categories-index .row .col{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-} */
 .roundedCard{
     background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
     width: 300px;
     height: 300px; 
     background-color: #ffffff;
-    border-radius: 50%;
-    border: 1px solid #6a0dad;
+    border-radius: 50%; 
+    border: 1px solid #6a0dad; 
     transition: transform 0.3s ease;
     margin: 30px;
 }
-
-.roundedCard:hover {
+.roundedCard:hover{
     transform: translateY(-5px);
 }
-
-.subCategories-title {
+.subCategories-title{
     padding-bottom: 30px;
 }
-
 .subCategories-link{
     display: inline-block;
     padding: 7px;
 }
 
 /*all_freelancers*/
-.all_freelancers_container {
+.all_freelancers_container{
     margin-top: 20px;
 }
 .filter-col{
@@ -281,7 +260,6 @@ footer {
     margin: 50px;
     padding: 5px;
 }
-
 .filtersBtn{
     display: inline;
     background-color: transparent;
@@ -309,7 +287,7 @@ font-weight: bold;
 .freelancer-card{
     background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
-    border: 1px solid #6a0dad;
+    border: 1px solid #6a0dad; 
     transition: transform 0.3s ease;
     margin-left: 30px;
     width: 200px;
@@ -318,16 +296,14 @@ font-weight: bold;
 .freelancer-card h6{
     border-bottom: 1px gray solid;
 }
-
 /*registration*/
-.registration {
+.registration{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70vh;
 }
-
-.registration a {
+.registration a{
     text-decoration: none;
 }
 .registration-card{
@@ -346,8 +322,7 @@ font-weight: bold;
     box-shadow: 0 10px 18px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
 }
 /* login */
-
-.log-container h3 {
+.log-container h3{
     margin-top: 40px;
     display: flex;
     justify-content: center;
@@ -355,7 +330,6 @@ font-weight: bold;
     height: 100%;
     color: white;
 }
-
 .log-form {
     max-width: 430px;
     margin: 50px auto 180px auto;
@@ -398,7 +372,6 @@ font-weight: bold;
     padding-top: 20px;
     text-align: center;
 }
-
 .create-account a {
     display: inline;
     color: #a669e2;
@@ -409,8 +382,7 @@ font-weight: bold;
     padding-left: 40px;
     margin-right: 100px;
 }
-
-.signup-form {
+.signup-form{
     margin-right: 35px;
 }
 .signUptitle{
@@ -438,19 +410,18 @@ font-weight: bold;
 .have-accountCoontainer{
     display: flex;
     align-items: center;
-    border-left: 1px solid lightgray;
+    border-left:1px solid lightgray ;
 }
 .have-account{
     margin-bottom: 40px;
     padding-left: 30px;
     text-align: center;
 }
-
 .have-account a {
-    color: #a669e2;
-}
+    color:#a669e2;
+  }
 
-.signUpForm {
+.signUpForm{
     max-width: 400px;
     color: white;
     margin-left: 40px;
@@ -459,17 +430,12 @@ font-weight: bold;
     color: white;
     margin-left: 20px;
 }
-.signUpForm label {
-    color: white;
-}
-
-.signUpForm p {
+.signUpForm label{
     color: white;
 }
 .signUpForm p{
     color: white;
 }
-
 .signUpForm input{
     background-color: transparent;
     border: #a669e2 1px solid;
@@ -478,6 +444,10 @@ font-weight: bold;
     border-radius: 5px;
     color: white;
 }
+.signUpForm tbody td{
+    padding: 10px;
+}
+
 .signUpForm select{
     background-color: transparent;
     border: #a669e2 1px solid;
@@ -489,7 +459,6 @@ font-weight: bold;
 .signUpForm select option{
     color: black;
 }
-
 .signUpForm button{
     background-color: lightgray;
     border: #a669e2 1px solid;
@@ -508,6 +477,7 @@ font-weight: bold;
     color: lightgray;
     display: none;
 }
+
 .signUpForm textarea {
     background-color: transparent;
     border: #a669e2 1px solid;
@@ -517,49 +487,41 @@ font-weight: bold;
 .signUpForm th {
     margin-left: 16px;
 }
-
 .signUpForm ul{
     display: none;
 }
 
 /*client/freelancer profile */
-.profile-container {
-    margin-top: 30px;
-    margin-bottom: 200px;
+.profile-container{
+    margin-top: 70px;
+    margin-bottom: 20px;
     padding: 20px;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
 }
-
-.profile-container .row {
+.profile-container .row{
     margin-bottom: 10px;
 }
-
-.profile-container h1 {
+.profile-container h1{
     padding-bottom: 20px;
 }
-
-.profile-list li {
+.profile-list li{
     background: transparent;
     color: white;
     padding-bottom: 15px;
 
 }
-
-.profile-list li strong {
-    color: white;
+.profile-list li strong{
+    color:white;
     padding-right: 4px;
 }
-
-.profile-img {
+.profile-img{
     margin: 10px;
     padding: 10px;
 }
-
-.card-action-edits {
-    font-size: larger;
+.card-action-edits{
+font-size: larger;
 }
-
-.edit-DjangoForm table tbody textarea {
+.edit-DjangoForm table tbody textarea{
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
     border: #dbcee7 1px solid;
     padding: 10px;
@@ -567,9 +529,9 @@ font-weight: bold;
     border-radius: 5px;
     color: white;
 }
-
 .edit-DjangoForm table tbody input,
-.edit-DjangoForm table tbody select {
+.edit-DjangoForm table tbody select
+    {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
     border: #e8e0f1 1px solid;
     padding: 10px;
@@ -577,12 +539,11 @@ font-weight: bold;
     border-radius: 5px;
     color: white;
 }
-
-.edit-DjangoForm table label {
+.edit-DjangoForm table label{
     font-size: larger;
 }
 
-.edit-DjangoForm .btn {
+.edit-DjangoForm .btn{
     background-color: lightgray;
     border: #a669e2 1px solid;
     padding: 10px;
@@ -591,39 +552,99 @@ font-weight: bold;
     width: 30%;
 
 }
-
-.edit-DjangoForm .btn:hover {
+.edit-DjangoForm .btn:hover{
     background-color: transparent;
     border: #a669e2 1px solid;
     color: white;
 }
-
-.delete-profile-container {
+.delete-profile-container{
     height: 100vh;
     margin-top: 30px;
     margin-bottom: 200px;
     padding: 20px;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
 }
-
-.delete-profile-card {
-    margin-top: 22px;
+.delete-profile-card{
+margin-top: 22px;
 }
-
-.delete-profile-container a {
+.delete-profile-container a{
     color: black;
 }
-
-.delete-list {
-    width: 50%;
+.delete-list{
+    width: 50%;   
 }
-
-.delete-list li {
-    width: 50%;
-
+.delete-list li{
+    width: 50%;  
+ 
 }
-
-.delete-profile {
+.delete-profile{
     margin: 20px;
     border: none;
+}
+.client-profile-header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.new-jobBtn{
+    border: #a669e2 1px solid;
+    border-radius: 5px;
+}
+.new-jobBtn:hover{
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+    color: black;
+}
+.profile-subcontainer{
+    background-color: transparent;
+}
+.profile-subcontainer h3{
+    color: white;
+}
+.profile-subcontainerCard{
+    background: transparent;
+    padding: 20px;
+}
+
+.subProfile-list {
+    color: black;
+    padding: 20px;
+    margin: 3px;
+    border: #a669e2;
+}
+.profile-list li{
+    font-size: 17px;
+    padding: 30px;
+}
+.subProfile-list li{
+    margin: 10px;
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.4);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+}
+.jobPost-search {
+    display: inline;
+    background: rgba(243, 243, 243, 0.1);
+    border:rgba(201, 154, 220, 0.6) 1px solid;
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+    width: 250px;
+}
+.jobPost-searchBtn {
+    display: inline;
+    background: rgba(243, 243, 243, 0.1);
+    border:rgba(201, 154, 220, 0.6) 1px solid;
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+}
+.jobPost-searchBtn:hover{
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+}
+.jobPost-search:hover{
+    background-color: #fff;
+    color: black;
+    transition: width 0.3s ease-in-out;
+    width: 300px; 
 }

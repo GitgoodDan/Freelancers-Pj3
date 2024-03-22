@@ -1,100 +1,97 @@
 {% extends 'base.html' %}
 {% block content %}
 
-   <div class="container-fluid">
-     <h2 class="section-title popular-title">Web Development Categories</h2>
-     <div class="row">
+<h2 class="section-title popular-title m-5">Web Development Categories</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card roundedCard bg-transparent">
+        <div class="card-body text-center  d-flex flex-column justify-content-center">
+          <h3 class="card-title text-white subCategories-title">Front-End Development</h3>
+          <div>
+            <a href="{% url 'front_end_development_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
+          </div>
+        </div>
+      </div>
+      </a>
+    </div><!--/col-->
 
     <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">Front-End Development</h2>
-       <div>
+          <h3 class="card-title text-white subCategories-title">Back-End Development</h3>
+          <div>
 
-         <a href="{% url 'front_end_development_jobs' %}">Jobs</a> |
-         <a href="{% url 'all_freelancers' %}">Freelancers</a>
+            <a href="{% url 'back_end_development_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
 
+          </div>
+        </div>
       </div>
-     </div>
-   </div>
- </a>
- </div><!--/col-->
+      </a>
+    </div><!--/col-->
 
     <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">Back-End Development</h2>
-       <div>
+          <h3 class="card-title text-white subCategories-title">Full-Stack Development</h3>
+          <div>
 
-         <a href="{% url 'back_end_development_jobs' %}">Jobs</a> |
-         <a href="{% url 'all_freelancers' %}">Freelancers</a>
+            <a href="{% url 'full_stack_development_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
 
+          </div>
+        </div>
       </div>
-     </div>
-   </div>
- </a>
- </div><!--/col-->
+      </a>
+    </div><!--/col-->
 
     <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">Full-Stack Development</h2>
-       <div>
+          <h3 class="card-title text-white subCategories-title">E-Commerce Development</h3>
+          <div>
 
-         <a href="{% url 'full_stack_development_jobs' %}">Jobs</a> |
-         <a href="{% url 'all_freelancers' %}">Freelancers</a>
+            <a href="{% url 'e_commerce_development_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
 
+          </div>
+        </div>
       </div>
-     </div>
-   </div>
- </a>
- </div><!--/col-->
+      </a>
+    </div><!--/col-->
 
     <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">E-Commerce Development</h2>
-       <div>
+          <h3 class="card-title text-white subCategories-title">Web Application Development</h3>
+          <div>
 
-         <a href="{% url 'e_commerce_development_jobs' %}">Jobs</a> |
-         <a href="{% url 'all_freelancers' %}">Freelancers</a>
+            <a href="{% url 'web_application_development_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
 
+          </div>
+        </div>
       </div>
-     </div>
-   </div>
- </a>
- </div><!--/col-->
+      </a>
+    </div><!--/col-->
 
     <div class="col-md-4 mb-4">
       <div class="card roundedCard bg-transparent">
         <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">Web Application Development</h2>
-       <div>
+          <h3 class="card-title text-white subCategories-title">Responsive Web Design</h3>
+          <div>
 
-         <a href="{% url 'web_application_development_jobs' %}">Jobs</a> |
-         <a href="{% url 'all_freelancers' %}">Freelancers</a>
+            <a href="{% url 'responsive_web_design_jobs' %}">Jobs</a> |
+            <a href="{% url 'all_freelancers' %}">Freelancers</a>
 
+          </div>
+        </div>
       </div>
-     </div>
-   </div>
- </a>
- </div><!--/col-->
-
-    <div class="col-md-4 mb-4">
-      <div class="card roundedCard bg-transparent">
-        <div class="card-body text-center  d-flex flex-column justify-content-center">
-          <h2 class="card-title text-white subCategories-title">Responsive Web Design</h2>
-       <div>
-
-         <a href="{% url 'responsive_web_design_jobs' %}">Jobs</a> |
-         <a href="{% url 'all_freelancers' %}">Freelancers</a>
-
-      </div>
-     </div>
-   </div>
- </a>
- </div><!--/col-->
-
+      </a>
+    </div><!--/col-->
+  </div>
 </div>
 </div>
 

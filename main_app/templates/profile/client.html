@@ -3,51 +3,58 @@
 
 <body class="freelancers-page">
 
-  <div class="container-fluid card profile-card">
-    <h1><strong>{{ client.user.username }}'</strong>s Profile</h1>
+  <div class="container-fluid card profile-container">
     <div class="row">
       <div class="col">
-        <img class="card-img-top" src="https://picsum.photos/2/2" alt="Card image cap" width="10px" height="30px">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Company: {{ client.company }}</li>
-          <li class="list-group-item">Address: {{ client.address }}</li>
-          <li class="list-group-item">Phone: {{ client.phone_number }}</li>
-          <li class="list-group-item">Email: {{ client.user.email }}</li>
+        <div class="client-profile-header">
+          <h1 class="col"><strong>{{ client.user.username }}'</strong>s Profile</h1>
+          <div><a class="col nav-link new-jobBtn" href="{% url 'posting_create' %}">Post New Job</a></div>
+        </div>
+        <ul class="list-group list-group-flush profile-list">
+          <li class="list-group-item"><strong>Company: </strong> {{ client.company }}</li>
+          <li class="list-group-item"><strong>Address: </strong> {{ client.address }}</li>
+          <li class="list-group-item"><strong>Phone: </strong> {{ client.phone_number }}</li>
+          <li class="list-group-item"><strong>Email: </strong> {{ client.user.email }}</li>
+
           <div class="card-footer">
-            <div class="card-action-edits">
-              <a href="{% url 'client_update' client.id %}">Edit</a>
+            <div class="card-action-edits ml-auto text-right">
+              <a href="{% url 'client_update' client.id %}">Edit | </a>
               <a href="{% url 'client_delete' client.id %}">Delete</a>
             </div>
           </div>
         </ul>
       </div><!--/left col-->
 
-      <div class="col-md-3">
-        <h1>2nd col</h1>
-      </div><!--/right col-->
-    </div>
-  </div>
-      <div class="card mt-4">
-        <div class="card-header">
-            <h2>Jobs Posted by {{ client.user.username }}</h2>
+      <!--right col-->
+      <div class="col-md-3 profile-img">
+        <img class="card-img-top" src="https://picsum.photos/2/2" alt="Card image cap">
+      </div>
+    </div><!--/row-->
+  </div><!--/profile-container-->
+
+
+  <div class="container-fluid card profile-subcontainer">
+  <div class="card mt-4 profile-subcontainerCard">
+    <h3>Jobs Posted by {{ client.user.username }}</h3>
+
+    <ul class="list-group list-group-flush subProfile-list">
+      {% for job in client.user.job_postings.all %}
+      <li class="list-group-item">
+        <h4><strong>{{ job.title }}</strong></h4>
+        <p>{{ job.description }}</p>
+        <p><strong>Price: $</strong>{{ job.price }}</p>
+        <p><strong>Category:</strong> {{ job.get_category_display }}</p>
+        <p><strong>Location:</strong> {{ job.get_location_display }}</p>
+        <p><strong>Timeframe:</strong> {{ job.get_timeframe_display }}</p>
+        <div class="card-action-edits">
+          <a href="{% url 'posting_update' pk=job.id %}">Edit | </a>
+          <a href="{% url 'posting_delete' pk=job.id %}">Delete</a>
         </div>
-        <ul class="list-group list-group-flush">
-            {% for job in client.user.job_postings.all %}
-            <li class="list-group-item">
-                <h4>{{ job.title }}</h4>
-                <p>{{ job.description }}</p>
-                <p>Price: ${{ job.price }}</p>
-                <p>Category: {{ job.get_category_display }}</p>
-                <p>Location: {{ job.get_location_display }}</p>
-                <p>Timeframe: {{ job.get_timeframe_display }}</p>
-                <div class="card-action-edits">
-                    <a href="{% url 'posting_update' pk=job.id %}">Edit</a>
-                    <a href="{% url 'posting_delete' pk=job.id %}">Delete</a>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div><!--/card-->
+</div><!--/container-->
 
 </body>
 

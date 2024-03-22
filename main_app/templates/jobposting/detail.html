@@ -1,9 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 <body class="freelancers-page">
-<br><br><br>
-    
-    <div class="card-group">
+
+  <div class="container-fluid m-5" >
+  <h1 style="color: white;">{{job.title}} - {{job.get_category_display}}</h1> 
+  <p style="color: white; size: 10px;">Posted by: {{ job.client }}</p> 
+  <hr style="background-color: rgba(201, 154, 220, 0.6); width: 400px; margin-left: 0; ">
+
+  <div class="container-fluid m-2">
+  <br>
+  <div style="color: white;">  
+  <h6>- Description</h6>
+  <p>{{job.description}}</p>
+
+  <h6>- Location</h6>
+  <p >{{ job.get_location_display }}</p>
+  
+    <h6>- Price</h6>
+    <p >${{job.price}}</p>
+
+  </div>
+</div>
+</div><!--container-->
+
+
+    <!-- <div class="card-group m-7">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Job Details</h5>
@@ -49,8 +70,8 @@
               <small class="text-body-secondary"></small>
             </div>
         </div>
-      </div>
-
+      </div> -->
+    </div>
 </body>
 
 {% endblock %}
