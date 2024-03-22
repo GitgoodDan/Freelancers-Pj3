@@ -3,23 +3,31 @@
 
 <body class="freelancers-page">
 
-      <div class="card" style="width: 18rem; margin-left: 35%;">
-        <div class="card-header">
-            <h1>{{ freelancer.user.username }}'s Profile</h1>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Field: {{ freelancer.get_type_fl_display }}</li>
-          <li class="list-group-item">Base Rate: ${{  freelancer.hourly_rate }} </li>
-          <li class="list-group-item">Skills: {{ freelancer.skills }}</li>
-          <li class="list-group-item">Portfolio: <a class="profile" href="{{ freelancer.portfolio_link }}">{{ freelancer.portfolio_link }}</a></li>
+  <div class="container-fluid card profile-container" >
+    <div class="row">
+    <div class="col">
+      <h1><strong>{{ freelancer.user.username }}'</strong>s Profile</h1>
+        <ul class="list-group list-group-flush profile-list">
+          <li class="list-group-item"><strong>Title: </strong> {{ freelancer.get_type_fl_display }}</li>
+          <li class="list-group-item"><strong>Base Rate: $</strong>{{  freelancer.hourly_rate }} </li>
+          <li class="list-group-item"><strong>Skills: </strong> {{ freelancer.skills }}</li>
+          <li class="list-group-item"><strong>Portfolio: </strong> <a href="{{ freelancer.portfolio_link }}">{{ freelancer.portfolio_link }}</a></li>
           <div class="card-footer">
-            <div class="card-action-edits">
-                <a class="profile" href="{% url 'freelancer_update' freelancer.id %}">Edit</a>
-                <a class="profile" href="{% url 'freelancer_delete' freelancer.id %}">Delete</a>
+            <div class="card-action-edits ml-auto text-right">
+                <a href="{% url 'freelancer_update' freelancer.id %}">Edit  | </a>
+                <a href="{% url 'freelancer_delete' freelancer.id %}">Delete</a>
+
               </div>
           </div>
         </ul>
-      </div>
+    </div><!--/left col-->
+
+    <div class="col-md-3 profile-img">
+      <img class="card-img-top" src="https://picsum.photos/2/2" alt="Card image cap" >
+    </div><!--/right col-->
+    </div><!--/row-->
+    </div><!--/container-->
+
       
 </body>
 

@@ -1,31 +1,29 @@
 * {
     box-sizing: border-box;
-  }
 
-body.freelancers-page{
+
+}
+
+body.freelancers-page {
     background-image: linear-gradient(900deg, #4E4376 0%, #2B5876 100%),
-                      url('path_to_your_image.jpg');
+        url('path_to_your_image.jpg');
     /* Background image size and positioning */
     background-size: cover;
     background-position: center;
     /* Background image will not repeat */
     background-repeat: no-repeat;
-    }
-  
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     font-family: Arial;
-  }
-
-body.freelancers-page{
-  background-image: linear-gradient(900deg, #4e4376 0%, #2b5876 100%),
-                    url('path_to_your_image.jpg');
-  /* Background image size and positioning */
-  background-size: cover;
-  background-position: center;
-  /* Background image will not repeat */
-  background-repeat: no-repeat;
-  }
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
 
 a{
     text-decoration: none;
@@ -44,30 +42,27 @@ a:hover{
     color: black;
 }
 
-body{
-    position: relative;
-}
+
 
   #myVideo {
     position: fixed;
     right: 0;
     bottom: 0;
     top: 0.1px;
-    min-width: 100%; 
+    min-width: 100%;
     opacity: 0.9;
-    z-index: -1; 
-  }
-
+    z-index: -1;
+}
 .overlay{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
     pointer-events: none;
-    z-index: -1; 
+    z-index: -1;
 }
 
 .navbar-brand {
@@ -93,6 +88,7 @@ body{
     border-right: none;
 }
 
+
 .navbar-toggler{
     color: white;
     border: #a669e2 1px solid;
@@ -101,7 +97,8 @@ body{
 footer {
     margin-top: 50px;
     padding-top: 50px;
-    background-color: rgba(0, 0, 0, 0.9); 
+    background-color: rgba(0, 0, 0, 0.9);
+
 }
 
 /* Home UI */
@@ -131,6 +128,7 @@ footer {
     border: #a669e2 1px solid;
     color: lightgray;
 }
+
 /* Popular Services Section */
 .popular-services {
     margin: 40px 10%;
@@ -140,6 +138,7 @@ footer {
     text-align: center;
     color: white;
 }
+
 
 .popular-card{
     background: radial-gradient(circle, rgba(228, 232, 236, 0.3), rgba(44, 62, 80, 0.3));
@@ -160,11 +159,10 @@ footer {
     height: 50%;
 }
 
+
 .popular-card:hover{
     box-shadow: 0 10px 18px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
 }
-
-
 /* .card {
     margin-bottom: 30px;
     border: none;
@@ -177,19 +175,18 @@ footer {
 .card-text {
     font-size: 1rem;
 }
+
 /* Why Freelancer Section */
 .why-freelancer {
     background: radial-gradient(circle, rgba(228, 232, 236, 0.6), rgba(44, 62, 80, 0.6));
     padding: 80px 0;
 }
-
 .why-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
-
 .why-freelancer-title{
     margin-left: 0;
     color: rgb(0, 0, 0);
@@ -201,6 +198,7 @@ footer {
     font-size: 1.3rem;
     color: rgb(0, 0, 0);
 }
+
 /* /Why Freelancer Section */
 
 /* Join Section */
@@ -222,13 +220,13 @@ footer {
 .join-section button {
     width: 100%;
     font-size: larger;
-    padding:9px 150px;
+    padding: 9px 150px;
     border-radius: 0;
 }
-
 .clientBtn{
-    background-color: #a669e2;
+  background-color: #a669e2;
 }
+
 /* /Join Section */
 
 
@@ -242,24 +240,23 @@ footer {
     align-items: center;
     text-align: center;
 } */
-
 .roundedCard{
     background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
     width: 300px;
     height: 300px; 
     background-color: #ffffff;
-    border-radius: 50%; 
-    border: 1px solid #6a0dad; 
+    border-radius: 50%;
+    border: 1px solid #6a0dad;
     transition: transform 0.3s ease;
     margin: 30px;
 }
 
-.roundedCard:hover{
+.roundedCard:hover {
     transform: translateY(-5px);
 }
 
-.subCategories-title{
+.subCategories-title {
     padding-bottom: 30px;
 }
 
@@ -269,20 +266,17 @@ footer {
 }
 
 /*all_freelancers*/
-.all_freelancers_container{
+.all_freelancers_container {
     margin-top: 20px;
 }
-
 .filter-col{
     border-right: 2px solid lightgrey;
     color: white;
 }
-
 .filterLable{
     font-weight: bold;
     font-size: large;
 }
-
 .mb-3{
     margin: 50px;
     padding: 5px;
@@ -304,9 +298,10 @@ footer {
 
 .freelancer-card{
     margin: 10px;
-
 }
-
+.freelancer-card div label {
+    font-weight: bold;
+}
 .freelancer-card div label{
 font-weight: bold;
 }
@@ -314,7 +309,7 @@ font-weight: bold;
 .freelancer-card{
     background: radial-gradient(circle, rgba(135, 137, 139, 0.3), rgba(44, 62, 80, 0.3));
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
-    border: 1px solid #6a0dad; 
+    border: 1px solid #6a0dad;
     transition: transform 0.3s ease;
     margin-left: 30px;
     width: 200px;
@@ -323,18 +318,18 @@ font-weight: bold;
 .freelancer-card h6{
     border-bottom: 1px gray solid;
 }
+
 /*registration*/
-.registration{
+.registration {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70vh;
 }
 
-.registration a{
+.registration a {
     text-decoration: none;
 }
-
 .registration-card{
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
@@ -347,14 +342,12 @@ font-weight: bold;
     align-items: center;
     flex-direction: column;
 }
-
 .registration-card:hover{
     box-shadow: 0 10px 18px rgba(255, 255, 255, 0.4); /* Larger shadow on hover */
 }
-
 /* login */
 
-.log-container h3{
+.log-container h3 {
     margin-top: 40px;
     display: flex;
     justify-content: center;
@@ -407,10 +400,9 @@ font-weight: bold;
 }
 
 .create-account a {
-    display: inline; 
-    color:#a669e2;
-  }
-
+    display: inline;
+    color: #a669e2;
+}
 .signupContainer{
     color: white;
     margin: 20px;
@@ -418,15 +410,13 @@ font-weight: bold;
     margin-right: 100px;
 }
 
-.signup-form{
+.signup-form {
     margin-right: 35px;
 }
-
 .signUptitle{
     margin-top: 25px;
     margin-bottom: 25px;
 }
-
 .signUpInput{
     background-color: transparent;
     border: #a669e2 1px solid;
@@ -435,25 +425,21 @@ font-weight: bold;
     border-radius: 5px;
     color: white;
 }
-
 .signUpBtn{
     padding-bottom: 20px;
     margin-bottom: 20px;
     width: 100%;
 }
-
 .signUpBtn:hover{
     background-color: transparent;
     border: #a669e2 1px solid;
     color: white;
 }
-
 .have-accountCoontainer{
     display: flex;
     align-items: center;
-    border-left:1px solid lightgray ;
+    border-left: 1px solid lightgray;
 }
-
 .have-account{
     margin-bottom: 40px;
     padding-left: 30px;
@@ -461,24 +447,25 @@ font-weight: bold;
 }
 
 .have-account a {
-    color:#a669e2;
-  }
+    color: #a669e2;
+}
 
-.signUpForm{
+.signUpForm {
     max-width: 400px;
     color: white;
     margin-left: 40px;
 }
-
 .signUptitle{
     color: white;
     margin-left: 20px;
 }
-
-.signUpForm label{
+.signUpForm label {
     color: white;
 }
 
+.signUpForm p {
+    color: white;
+}
 .signUpForm p{
     color: white;
 }
@@ -491,7 +478,6 @@ font-weight: bold;
     border-radius: 5px;
     color: white;
 }
-
 .signUpForm select{
     background-color: transparent;
     border: #a669e2 1px solid;
@@ -500,7 +486,6 @@ font-weight: bold;
     border-radius: 5px;
     color: white;
 }
-
 .signUpForm select option{
     color: black;
 }
@@ -514,18 +499,15 @@ font-weight: bold;
     margin-bottom: 5px;
 
 }
-
 .signUpForm button:hover{
     background-color: transparent;
     border: #a669e2 1px solid;
     color: white;
 }
-
 .signUpForm span{
     color: lightgray;
     display: none;
 }
-
 .signUpForm textarea {
     background-color: transparent;
     border: #a669e2 1px solid;
@@ -538,4 +520,110 @@ font-weight: bold;
 
 .signUpForm ul{
     display: none;
+}
+
+/*client/freelancer profile */
+.profile-container {
+    margin-top: 30px;
+    margin-bottom: 200px;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+}
+
+.profile-container .row {
+    margin-bottom: 10px;
+}
+
+.profile-container h1 {
+    padding-bottom: 20px;
+}
+
+.profile-list li {
+    background: transparent;
+    color: white;
+    padding-bottom: 15px;
+
+}
+
+.profile-list li strong {
+    color: white;
+    padding-right: 4px;
+}
+
+.profile-img {
+    margin: 10px;
+    padding: 10px;
+}
+
+.card-action-edits {
+    font-size: larger;
+}
+
+.edit-DjangoForm table tbody textarea {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+    border: #dbcee7 1px solid;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.edit-DjangoForm table tbody input,
+.edit-DjangoForm table tbody select {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+    border: #e8e0f1 1px solid;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.edit-DjangoForm table label {
+    font-size: larger;
+}
+
+.edit-DjangoForm .btn {
+    background-color: lightgray;
+    border: #a669e2 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 40px;
+    width: 30%;
+
+}
+
+.edit-DjangoForm .btn:hover {
+    background-color: transparent;
+    border: #a669e2 1px solid;
+    color: white;
+}
+
+.delete-profile-container {
+    height: 100vh;
+    margin-top: 30px;
+    margin-bottom: 200px;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+}
+
+.delete-profile-card {
+    margin-top: 22px;
+}
+
+.delete-profile-container a {
+    color: black;
+}
+
+.delete-list {
+    width: 50%;
+}
+
+.delete-list li {
+    width: 50%;
+
+}
+
+.delete-profile {
+    margin: 20px;
+    border: none;
 }
